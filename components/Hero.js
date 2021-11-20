@@ -1,13 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { RoughNotation, RoughNotationGroup } from 'react-rough-notation';
 
 export default function Hero() {
   return (
-    <section className='w-screen px-10 pt-10 h-4/5'>
-      <div className='container mx-auto flex flex-col-reverse md:flex-row md:h-screen justify-items-center md:items-center items-center '>
+    <section className='w-screen px-10 pt-10 md:pt-0 h-4/5'>
+      <div className='container mx-auto flex flex-col-reverse md:flex-row  md:h-4/5 md:my-40 justify-items-center md:items-center items-center '>
         <div className='items-center text-left lg:flex-grow md:w-1/2 w-full'>
           <h1 className='text-6xl font-normal leading-normal mt-0 mb-2'>
-            Web Developer | Musician
+            <RoughNotation type='underline' show={true} color='#3B82F6'>
+              Web Developer
+            </RoughNotation>
           </h1>
           <p className='text-lg font-normal leading-relaxed mt-6 mb-4 text-gray-500 max-w-xl'>
             Web Developer From Southern California. I am dedicated to
