@@ -13,7 +13,7 @@ export default function Projects() {
         <ScrollAnimation
           animateIn='fadeInUp'
           animateOut='fadeOutUp'
-          animateOnce='true'
+          animateOnce={true}
         >
           <div className='container mx-auto shadow-lg rounded-lg max-w-md hover:shadow-2xl transition duration-300 bg-white'>
             <img
@@ -54,7 +54,7 @@ export default function Projects() {
         <ScrollAnimation
           animateIn='fadeInUp'
           animateOut='fadeOutUp'
-          animateOnce='true'
+          animateOnce={true}
         >
           <div className='container mx-auto shadow-lg rounded-lg max-w-md hover:shadow-2xl transition duration-300 bg-white'>
             <img
@@ -87,7 +87,7 @@ export default function Projects() {
         <ScrollAnimation
           animateIn='fadeInUp'
           animateOut='fadeOutUp'
-          animateOnce='true'
+          animateOnce={true}
         >
           <div className='container mx-auto shadow-lg rounded-lg max-w-md hover:shadow-2xl transition duration-300 bg-white'>
             <img
