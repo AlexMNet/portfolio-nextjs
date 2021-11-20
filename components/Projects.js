@@ -1,10 +1,6 @@
 export default function Projects() {
   return (
-    <div
-      class='bg-gray-100 py-20 px-10 h-screen'
-      style={{ clipPath: 'polygon(0 3%, 100% 0, 100% 97%, 0 100%)' }}
-      id='projects'
-    >
+    <div class='bg-gray-100 py-20 px-10' id='projects'>
       <h1 className='text-6xl text-white font-bold leading-normal mt-0 mb-2 text-center'>
         Projects
       </h1>
