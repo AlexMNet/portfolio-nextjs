@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import SocialMedia from '../components/SocialMedia';
 import Projects from '../components/Projects.js';
 import Dropdown from '../components/Dropdown';
+import Footer from '../components/Footer';
 
 export default function Home({ Component, pageProps }) {
   const [open, setOpen] = useState(false);
@@ -64,6 +65,7 @@ export default function Home({ Component, pageProps }) {
       <SocialMedia />
       <Hero />
       <Projects />
+      <Footer />
     </div>
   );
 }

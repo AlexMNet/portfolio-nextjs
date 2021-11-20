@@ -2,7 +2,10 @@ import Link from 'next/link';
 
 export default function Navbar({ toggleDropdown, open }) {
   return (
-    <nav className='flex justify-between items-center h-16 bg-transparent text-black relative shadow-sm font-mono'>
+    <nav
+      className='flex justify-between items-center h-16 bg-transparent text-black relative shadow-sm font-mono'
+      id='home'
+    >
       <Link href='/'>
         <a className='pl-8 hover:text-blue-500 text-lg tracking-widest font-semibold'>
           AlexMaldonado.DEV
