@@ -27,6 +27,7 @@ export default function Hero() {
         </div>
         <div className='items-center md:w-1/2 w-full flex-col'>
           <div className='overflow-hidden rounded-full'>
+            {/* <img src='/images/alex.jpg' alt='' /> */}
             <Image
               src='/images/alex.jpg'
               layout='responsive'
@@ -34,6 +35,7 @@ export default function Hero() {
               objectPosition='left top'
               width={200}
               height={200}
+              priority={true}
             />
           </div>
         </div>

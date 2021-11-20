@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Projects() {
   return (
     <div className='bg-gray-100 py-20 px-10' id='projects'>
@@ -26,6 +28,19 @@ export default function Projects() {
             <span className='text-xs font-semibold inline-block py-1 px-2 rounded text-white bg-blue-500 uppercase last:mr-0 mr-1'>
               TailwindCSS
             </span>
+            {/* Github and project links */}
+            <div className='mt-3 flex justify-start'>
+              <Link href='https://www.alexmaldonado.dev'>
+                <a className='text-blue-500 underline mr-5' target='_blank'>
+                  Live
+                </a>
+              </Link>
+              <Link href='https://github.com/AlexMNet/portfolio-nextjs'>
+                <a className='text-blue-500 underline' target='_blank'>
+                  Github
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
         {/* Card */}
@@ -45,6 +60,14 @@ export default function Projects() {
             <span className='text-xs font-semibold inline-block py-1 px-2 rounded text-white bg-blue-500 uppercase last:mr-0 mr-1'>
               React-Native
             </span>
+            {/* Github and project links */}
+            <div className='mt-3 flex justify-start'>
+              <Link href='https://github.com/AlexMNet/plateCalculator-React_Native'>
+                <a className='text-blue-500 underline' target='_blank'>
+                  Github
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
         {/* Card */}
@@ -67,6 +90,19 @@ export default function Projects() {
             <span className='text-xs font-semibold inline-block py-1 px-2 rounded text-white bg-blue-500 uppercase last:mr-0 mr-1'>
               EJS
             </span>
+            {/* Github and project links */}
+            <div className='mt-3 flex justify-start'>
+              <Link href='https://powerful-waters-28442.herokuapp.com/sauces'>
+                <a className='text-blue-500 underline mr-5' target='_blank'>
+                  Live
+                </a>
+              </Link>
+              <Link href='https://github.com/AlexMNet/hotSauceApp'>
+                <a className='text-blue-500 underline' target='_blank'>
+                  Github
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
