@@ -35,6 +35,10 @@ export default function Home({ Component, pageProps }) {
       <Head>
         <title>Alex Maldonado | Web Developer</title>
         <link rel='icon' href='/favicon.ico' />
+        <link
+          rel='stylesheet'
+          href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'
+        ></link>
       </Head>
       <Navbar toggleDropdown={toggleDropdown} open={open} />
       <Dropdown open={open} toggleDropdown={toggleDropdown} />
