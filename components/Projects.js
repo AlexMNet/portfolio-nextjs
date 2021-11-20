@@ -4,7 +4,7 @@ export default function Projects() {
       <h1 className='text-6xl text-white font-bold leading-normal mt-0 mb-2 text-center'>
         Projects
       </h1>
-      <hr class='border-0 bg-blue-500 text-blue-500 h-px max-w-md mx-auto' />
+      <hr className='border-0 bg-blue-500 text-blue-500 h-px max-w-md mx-auto' />
       {/* Card */}
       <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-10 xl-grid-cols-4 gap-y-10 gap-x-6 mt-5 '>
         <div class='container mx-auto shadow-lg rounded-lg max-w-md hover:shadow-2xl transition duration-300 bg-white'>
