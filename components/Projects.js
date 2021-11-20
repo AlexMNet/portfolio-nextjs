@@ -9,11 +9,11 @@ export default function Projects() {
         {/* Card */}
         <div className='container mx-auto shadow-lg rounded-lg max-w-md hover:shadow-2xl transition duration-300 bg-white'>
           <img
-            src='https://images.unsplash.com/photo-1627751476653-e954179b174a'
+            src='/images/dev-portfolio.png'
             alt=''
             className='rounded-t-lg w-full'
           />
-          <div className='p-6'>
+          <div className='p-6 border-t-2 border-blue-500'>
             <h1 className='md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 '>
               Dev Portfolio
             </h1>
@@ -31,44 +31,41 @@ export default function Projects() {
         {/* Card */}
         <div className='container mx-auto shadow-lg rounded-lg max-w-md hover:shadow-2xl transition duration-300 bg-white'>
           <img
-            src='https://images.unsplash.com/photo-1627751476653-e954179b174a'
+            src='/images/plate-calculator.jpg'
             alt=''
             className='rounded-t-lg w-full'
           />
-          <div className='p-6'>
+          <div className='p-6 border-t-2 border-blue-500'>
             <h1 className='md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 '>
-              Dev Portfolio
+              Plate Calculator
             </h1>
             <p className='text-gray-700 my-2 hover-text-900 '>
-              Built this Dev Portfolio to showcase my work.
+              A mobile application that calculates plates to put on a bar
             </p>
             <span className='text-xs font-semibold inline-block py-1 px-2 rounded text-white bg-blue-500 uppercase last:mr-0 mr-1'>
-              NextJS
-            </span>
-            <span className='text-xs font-semibold inline-block py-1 px-2 rounded text-white bg-blue-500 uppercase last:mr-0 mr-1'>
-              TailwindCSS
+              React-Native
             </span>
           </div>
         </div>
         {/* Card */}
         <div className='container mx-auto shadow-lg rounded-lg max-w-md hover:shadow-2xl transition duration-300 bg-white'>
           <img
-            src='https://images.unsplash.com/photo-1627751476653-e954179b174a'
+            src='/images/hot-sauce-app.png'
             alt=''
             className='rounded-t-lg w-full'
           />
-          <div className='p-6'>
+          <div className='p-6 border-t-2 border-blue-500'>
             <h1 className='md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 '>
-              Dev Portfolio
+              Hot Sauce Collection
             </h1>
             <p className='text-gray-700 my-2 hover-text-900 '>
-              Built this Dev Portfolio to showcase my work.
+              A full stack web app to keep track of my Hot Sauce Collection!
             </p>
             <span className='text-xs font-semibold inline-block py-1 px-2 rounded text-white bg-blue-500 uppercase last:mr-0 mr-1'>
-              NextJS
+              ExpressJS
             </span>
             <span className='text-xs font-semibold inline-block py-1 px-2 rounded text-white bg-blue-500 uppercase last:mr-0 mr-1'>
-              TailwindCSS
+              EJS
             </span>
           </div>
         </div>
