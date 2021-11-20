@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Navbar() {
   return (
-    <nav className='flex justify-between items-center h-16 bg-white text-black relative shadow-sm font-mono'>
+    <nav className='flex justify-between items-center h-16 bg-transparent text-black relative shadow-sm font-mono'>
       <Link href='/'>
         <a className='pl-8 hover:text-blue-500 text-lg tracking-widest font-semibold'>
           AlexMaldonado.DEV
@@ -30,7 +30,7 @@ export default function Navbar() {
         <Link href='/'>
           <a className='p-4 hover:text-blue-500'>Home</a>
         </Link>
-        <Link href='/'>
+        <Link href='#projects'>
           <a className='p-4 hover:text-blue-500'>Projects</a>
         </Link>
         <Link href='/'>

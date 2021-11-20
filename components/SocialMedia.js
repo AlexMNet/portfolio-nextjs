@@ -3,7 +3,7 @@ import { BsGithub, BsLinkedin, BsInstagram } from 'react-icons/bs';
 
 export default function SocialMedia() {
   return (
-    <div className='flex justify-around items-center h-10'>
+    <div className='flex justify-around items-center h-10 mt-2'>
       <div className=' flex justify-around items-center w-1/2'>
         <Link href='https://github.com/AlexMNet'>
           <a
