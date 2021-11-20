@@ -7,7 +7,7 @@ export default function Home({ Component, pageProps }) {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Alex Maldonado | Web Developer</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Navbar />
