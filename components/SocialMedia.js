@@ -8,7 +8,7 @@ export default function SocialMedia() {
         <Link href='https://github.com/AlexMNet'>
           <a
             target='_blank'
-            className='text-2xl hover:text-blue-500 hover:scale-110 hover:-translate-y-1 transition duration-500 ease-in-out'
+            className='text-2xl hover:text-blue-500 hover:scale-110 transform hover:-translate-y-1 transition duration-500 ease-in-out'
           >
             <BsGithub />
           </a>
@@ -16,7 +16,7 @@ export default function SocialMedia() {
         <Link href='https://www.linkedin.com/in/alex-maldonado-550920205/'>
           <a
             target='_blank'
-            className='text-2xl hover:text-blue-500 hover:scale-110 hover:-translate-y-1 transition duration-500 ease-in-out'
+            className='text-2xl hover:text-blue-500 hover:scale-110 transform hover:-translate-y-1 transition duration-500 ease-in-out'
           >
             <BsLinkedin />
           </a>
@@ -24,7 +24,7 @@ export default function SocialMedia() {
         <Link href='https://www.instagram.com/'>
           <a
             target='_blank'
-            className='text-2xl hover:text-blue-500 hover:scale-110 hover:-translate-y-1 transition duration-500 ease-in-out'
+            className='text-2xl hover:text-blue-500 hover:scale-110 transform hover:-translate-y-1 transition duration-500 ease-in-out'
           >
             <BsInstagram />
           </a>
