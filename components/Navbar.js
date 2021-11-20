@@ -3,10 +3,10 @@ import Link from 'next/link';
 export default function Navbar({ toggleDropdown, open }) {
   return (
     <nav
-      className='flex justify-between items-center h-16 bg-transparent text-black relative shadow-sm font-mono'
+      className='flex justify-between items-center h-16 bg-transparent text-black  shadow-sm font-mono'
       id='home'
     >
-      <Link href='/'>
+      <Link href='#home'>
         <a className='pl-8 hover:text-blue-500 text-lg tracking-widest font-semibold'>
           AlexMaldonado.DEV
           <span className='ml-1 animate-ping relative inline-flex rounded-full h-3 w-3 bg-blue-500'></span>
@@ -52,6 +52,9 @@ export default function Navbar({ toggleDropdown, open }) {
         </Link>
         <Link href='#projects'>
           <a className='p-4 hover:text-blue-500'>Projects</a>
+        </Link>
+        <Link href='#'>
+          <a className='p-4 hover:text-blue-500'>Docs</a>
         </Link>
         <Link href='/'>
           <a className='p-4 hover:text-blue-500'>About</a>
