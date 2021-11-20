@@ -5,12 +5,14 @@ Dev portfolio is live but currently under construction.
 ## Tech Stack
 
 FrontEnd
--NextJs
--ReactJS
--TailwindCSS
+
+- NextJs
+- ReactJS
+- TailwindCSS
 
 BackEnd
--To be Determined
+
+- To be Determined
 
 ### Contact
 
