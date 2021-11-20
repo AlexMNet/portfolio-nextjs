@@ -66,7 +66,7 @@ export default function Home({ Component, pageProps }) {
       <SocialMedia />
       <Hero />
       <Projects />
-      <GithubStats />
+      {/* <GithubStats /> */}
       <Footer />
     </div>
   );

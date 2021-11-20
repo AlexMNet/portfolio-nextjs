@@ -5,7 +5,7 @@ export default function GithubStats() {
         GitHub Stats
       </h1>
       <p className='text-center text-gray-600'>
-        Live github statics and current working projects coming soon...
+        Live github statistics and current working projects coming soon...
       </p>
     </section>
   );
