@@ -1,3 +1,7 @@
+// WARNING!!!!!!!!!!!!
+// THIS COMPONENT IS Deprecated
+// WARNING!!!!!!!!!!!!
+
 import Link from 'next/link';
 
 export default function Dropdown({ open, toggleDropdown }) {
