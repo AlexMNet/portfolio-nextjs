@@ -5,7 +5,12 @@ export default function Footer() {
     <div className='flex justify-center items-center h-16 bg-black text-white'>
       <p>Alex Maldonado &copy; {new Date().getFullYear()}</p>
       <div className='ml-10'>
-        {/* <button className='animate-pulse'>
+        <button
+          className='animate-pulse'
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
           <svg
             xmlns='http://www.w3.org/2000/svg'
             className='h-7 w-7'
@@ -18,8 +23,8 @@ export default function Footer() {
               clipRule='evenodd'
             />
           </svg>
-        </button> */}
-        <Link href='#home'>
+        </button>
+        {/* <Link href='#home'>
           <a>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -34,7 +39,7 @@ export default function Footer() {
               />
             </svg>
           </a>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

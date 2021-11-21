@@ -1,3 +1,4 @@
+import * as smoothscroll from 'smoothscroll-polyfill';
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
@@ -14,6 +15,11 @@ export default function Home({ Component, pageProps }) {
   const toggleDropdown = () => {
     setOpen(!open);
   };
+
+  //Enable smooth scrolling on iOS devices
+  useEffect(() => {
+    smoothscroll.polyfill();
+  }, []);
 
   // Hide dropdown if open is true and window is resized larger
   useEffect(() => {
@@ -34,7 +40,7 @@ export default function Home({ Component, pageProps }) {
 
   return (
     <div>
-      <Head>
+      <Head id='home'>
         <title>Alex Maldonado | Web Developer</title>
         {/* <link rel='icon' href='/favicon.ico' /> */}
         <link
@@ -61,7 +67,7 @@ export default function Home({ Component, pageProps }) {
         ></link>
       </Head>
       <Navbar toggleDropdown={toggleDropdown} open={open} />
-      <Dropdown open={open} toggleDropdown={toggleDropdown} />
+      {/* <Dropdown open={open} toggleDropdown={toggleDropdown} /> */}
       {/* {open && <Dropdown />} */}
       <SocialMedia />
       <Hero />
