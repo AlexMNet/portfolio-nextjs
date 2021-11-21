@@ -3,8 +3,8 @@ import ScrollAnimation from 'react-animate-on-scroll';
 
 export default function Projects() {
   return (
-    <div className='bg-gray-100 py-20 px-10' id='projects'>
-      <h1 className='text-6xl text-white font-bold leading-normal mt-0 mb-2 text-center'>
+    <div className='bg-gray-100 dark:bg-gray-900 py-20 px-10' id='projects'>
+      <h1 className='text-6xl text-white dark:text-gray-400 font-bold leading-normal mt-0 mb-2 text-center'>
         Projects
       </h1>
       <hr className='border-0 bg-blue-500 text-blue-500 h-px max-w-md mx-auto' />
