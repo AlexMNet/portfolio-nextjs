@@ -42,7 +42,6 @@ export default function Home({ Component, pageProps }) {
     <div>
       <Head id='home'>
         <title>Alex Maldonado | Web Developer</title>
-        {/* <link rel='icon' href='/favicon.ico' /> */}
         <link
           rel='apple-touch-icon'
           sizes='180x180'
