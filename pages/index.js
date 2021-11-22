@@ -6,10 +6,8 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import SocialMedia from '../components/SocialMedia';
 import Projects from '../components/Projects.js';
-import Dropdown from '../components/Dropdown';
 import Footer from '../components/Footer';
 import GithubStats from '../components/GithubStats';
-import DarkModeToggle from '../components/DarkModeToggle';
 
 export default function Home({ Component, pageProps }) {
   const [open, setOpen] = useState(false);
@@ -68,13 +66,8 @@ export default function Home({ Component, pageProps }) {
           href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'
         ></link>
       </Head>
-
       <Navbar toggleDropdown={toggleDropdown} open={open} />
-
-      {/* <Dropdown open={open} toggleDropdown={toggleDropdown} /> */}
-      {/* {open && <Dropdown />} */}
       <SocialMedia />
-      {/* <DarkModeToggle /> */}
       <Hero />
       <Projects />
       {/* <GithubStats /> */}
