@@ -48,16 +48,16 @@ export default function Navbar({ toggleDropdown, open }) {
           <Link href='/'>
             <a className='p-4 hover:text-blue-500'>Home</a>
           </Link>
-          <Link href='#projects'>
+          <Link href='/#projects'>
             <a className='p-4 hover:text-blue-500'>Projects</a>
           </Link>
           <Link href='/docs'>
             <a className='p-4 hover:text-blue-500'>Docs</a>
           </Link>
-          <Link href='/'>
+          <Link href='/about'>
             <a className='p-4 hover:text-blue-500'>About</a>
           </Link>
-          <Link href='/'>
+          <Link href='/contact'>
             <a className='p-4 hover:text-blue-500'>Contact</a>
           </Link>
         </div>
@@ -82,7 +82,7 @@ export default function Navbar({ toggleDropdown, open }) {
                 Home
               </a>
             </Link>
-            <Link href='#projects'>
+            <Link href='/#projects'>
               <a
                 onClick={toggleDropdown}
                 className='p-4 hover:text-blue-200 dark:text-gray-400'
@@ -98,7 +98,7 @@ export default function Navbar({ toggleDropdown, open }) {
                 Docs
               </a>
             </Link>
-            <Link href='/'>
+            <Link href='/about'>
               <a
                 onClick={toggleDropdown}
                 className='p-4 hover:text-blue-200 dark:text-gray-400'
@@ -106,7 +106,7 @@ export default function Navbar({ toggleDropdown, open }) {
                 About
               </a>
             </Link>
-            <Link href='/'>
+            <Link href='/contact'>
               <a
                 onClick={toggleDropdown}
                 className='p-4 hover:text-blue-200 dark:text-gray-400'

@@ -10,33 +10,10 @@ import Footer from '../components/Footer';
 import GithubStats from '../components/GithubStats';
 
 export default function Home({ Component, pageProps }) {
-  const [open, setOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setOpen(!open);
-  };
-
   //Enable smooth scrolling on iOS devices
   useEffect(() => {
     smoothscroll.polyfill();
   }, []);
-
-  // Hide dropdown if open is true and window is resized larger
-  useEffect(() => {
-    //Function to hide dropdown larger than 768px
-    const hideDropdown = () => {
-      if (window.innerWidth > 768 && open) {
-        setOpen(false);
-      }
-    };
-    //Add event listening on window resize
-    window.addEventListener('resize', hideDropdown);
-
-    //Event listener cleanup
-    () => {
-      window.removeEventListener('resize', hideDropdown);
-    };
-  });
 
   return (
     <div>
@@ -65,12 +42,10 @@ export default function Home({ Component, pageProps }) {
           href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'
         ></link>
       </Head>
-      <Navbar toggleDropdown={toggleDropdown} open={open} />
       <SocialMedia />
       <Hero />
       <Projects />
       {/* <GithubStats /> */}
-      <Footer />
     </div>
   );
 }
