@@ -2,11 +2,13 @@
 
 Dev portfolio is live but currently under construction.
 
+[AlexMaldonado.DEV](https://www.alexmaldonado.dev)
+
 ## Tech Stack
 
 FrontEnd
 
-- NextJs
+- NextJS
 - ReactJS
 - TailwindCSS
 
