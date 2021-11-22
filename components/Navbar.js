@@ -51,7 +51,7 @@ export default function Navbar({ toggleDropdown, open }) {
           <Link href='#projects'>
             <a className='p-4 hover:text-blue-500'>Projects</a>
           </Link>
-          <Link href='#'>
+          <Link href='/docs'>
             <a className='p-4 hover:text-blue-500'>Docs</a>
           </Link>
           <Link href='/'>
@@ -90,7 +90,7 @@ export default function Navbar({ toggleDropdown, open }) {
                 Projects
               </a>
             </Link>
-            <Link href='/'>
+            <Link href='/docs'>
               <a
                 onClick={toggleDropdown}
                 className='p-4 hover:text-blue-200 dark:text-gray-400'
