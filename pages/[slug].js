@@ -28,7 +28,7 @@ export default function Post({ post }) {
 
 //tell next.js how many pages there are
 export async function getStaticPaths() {
-  const res = await fetch('https://alexmdev.herokuapp.com/posts');
+  const res = await fetch(process.env.POSTS_URL);
   const posts = await res.json();
 
   //get slugs from each post
@@ -44,7 +44,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { slug } = params;
 
-  const res = await fetch(`https://alexmdev.herokuapp.com/posts?Slug=${slug}`);
+  const res = await fetch(`${process.env.POSTS_URL}?Slug=${slug}`);
   const data = await res.json();
 
   const post = data[0];

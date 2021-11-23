@@ -17,7 +17,7 @@ export default function Docs({ posts }) {
         posts.map((post, idx) => (
           <div
             key={post.id}
-            className='flex flex-col justify-items-start items-centerbg-gray-500 m-10 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105'
+            className='flex flex-col justify-items-start items-centerbg-gray-500 m-10'
           >
             <div className='flex flex-col '>
               <div>
@@ -55,7 +55,7 @@ export default function Docs({ posts }) {
 
 export async function getStaticProps() {
   //get posts from API
-  const res = await fetch('https://alexmdev.herokuapp.com/posts');
+  const res = await fetch(process.env.POSTS_URL);
   const posts = await res.json();
 
   return {
