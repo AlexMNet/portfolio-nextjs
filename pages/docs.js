@@ -4,9 +4,16 @@ export default function Docs({ posts }) {
   return (
     <div className='container px-6 py-4 mx-auto'>
       <h1 className='text-6xl font-normal leading-normal mt- mb-2 text-center'>
-        Project Documentation
+        Project Documentation Coming soon...
       </h1>
-      {posts &&
+      <div className='text-center'>
+        <Link href='/'>
+          <a className='text-blue-500 underline hover:text-blue-700 text-center'>
+            Back Home
+          </a>
+        </Link>
+      </div>
+      {/* {posts &&
         posts.map((post, idx) => (
           <div
             key={post.id}
@@ -28,17 +35,17 @@ export default function Docs({ posts }) {
             </Link>
             <hr class='mt-5 border-0 bg-blue-500 text-blue-500 h-px' />
           </div>
-        ))}
+        ))} */}
     </div>
   );
 }
 
-export async function getStaticProps() {
-  //get posts from API
-  const res = await fetch('http://localhost:1337/posts');
-  const posts = await res.json();
+// export async function getStaticProps() {
+//   //get posts from API
+//   const res = await fetch('http://localhost:1337/posts');
+//   const posts = await res.json();
 
-  return {
-    props: { posts },
-  };
-}
+//   return {
+//     props: { posts },
+//   };
+// }
