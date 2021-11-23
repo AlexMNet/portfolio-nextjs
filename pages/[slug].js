@@ -2,6 +2,10 @@ import Link from 'next/link';
 import React from 'react';
 import MarkdownIt from 'markdown-it';
 
+export default function Post() {
+  return <h1>Post</h1>;
+}
+
 // export default function Post({ post }) {
 //   const md = new MarkdownIt();
 //   const htmlContent = md.render(post.Content);
