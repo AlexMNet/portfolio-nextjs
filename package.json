@@ -3,10 +3,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next build && next export"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.4.1",
     "animate.css": "^4.1.1",
+    "markdown-it": "^12.2.0",
     "next": "latest",
     "next-themes": "0.0.15",
     "nextjs-progressbar": "0.0.13",

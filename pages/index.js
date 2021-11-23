@@ -15,6 +15,8 @@ export default function Home({ Component, pageProps }) {
     smoothscroll.polyfill();
   }, []);
 
+  console.log('client');
+
   return (
     <div>
       <Head id='home'>
