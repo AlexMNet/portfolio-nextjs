@@ -9,8 +9,6 @@ export default function Post({ post }) {
   return (
     <article>
       <div className='container mx-auto p-10 flex flex-col items-center'>
-        {/* <h1 className='text-3xl'>{post.Title}</h1>
-        <h3>{post.User.username}</h3> */}
         <section
           className='prose prose-dark'
           dangerouslySetInnerHTML={{ __html: htmlContent }}
