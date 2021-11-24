@@ -5,7 +5,6 @@ import MarkdownIt from 'markdown-it';
 export default function Post({ post }) {
   const md = new MarkdownIt();
   const htmlContent = md.render(post.Content);
-  console.log(htmlContent);
   return (
     <article>
       <div className='container mx-auto p-10 flex flex-col items-center'>
@@ -47,6 +46,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { slug } = params;
 
+  //Create link using slug
   const res = await fetch(`${process.env.POSTS_URL}?Slug=${slug}`);
   const data = await res.json();
 
