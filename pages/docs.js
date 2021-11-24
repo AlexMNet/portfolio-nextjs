@@ -3,15 +3,17 @@ import Link from 'next/link';
 export default function Docs({ posts }) {
   return (
     <div className='container py-4 mx-auto max-w-3xl'>
-      <h1 className='text-5xl font-normal leading-normal  mb-2 text-center'>
-        Project Documentation
-      </h1>
-      <div className='text-center'>
-        <Link href='/'>
-          <a className='text-blue-500 underline hover:text-blue-700 text-center'>
-            Back Home
-          </a>
-        </Link>
+      <div className='mb-30'>
+        <h1 className='text-3xl md:text-5xl font-normal leading-normal  mb-2 text-center'>
+          Project Documentation
+        </h1>
+        <div className='text-center'>
+          <Link href='/'>
+            <a className='text-blue-500 underline hover:text-blue-700 text-center'>
+              Back Home
+            </a>
+          </Link>
+        </div>
       </div>
       {posts &&
         posts.map((post, idx) => (
@@ -19,11 +21,11 @@ export default function Docs({ posts }) {
             key={post.id}
             className='flex flex-col justify-items-start items-centerbg-gray-500 m-10'
           >
-            <div className='flex flex-col '>
-              <div>
+            <div className='flex'>
+              <div className='mr-2'>
                 <img
-                  className='object-scale-down round-md'
-                  src={post.blogImg.formats.thumbnail.url}
+                  className='w-8 h-8 round-full'
+                  src={post.User.userAvatar.url}
                   alt=''
                 />
               </div>
@@ -36,7 +38,7 @@ export default function Docs({ posts }) {
                 </small>
               </div>
             </div>
-            <h1 className='text-4xl text-gray-800  font-normal'>
+            <h1 className='text-4xl text-gray-800 dark:text-gray-300 font-normal'>
               {post.Title}
             </h1>
             <h3 className='text-gray-600'>{post.description}</h3>
