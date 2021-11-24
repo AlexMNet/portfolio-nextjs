@@ -21,6 +21,11 @@ export default function Post({ post }) {
             Back Home
           </a>
         </Link>
+        <Link href='/docs'>
+          <a className='text-blue-500 underline hover:text-blue-700 text-center'>
+            Back to Docs
+          </a>
+        </Link>
       </div>
     </article>
   );
