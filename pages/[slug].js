@@ -46,6 +46,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { slug } = params;
 
+  //Create link using slug
   const res = await fetch(`${process.env.POSTS_URL}?Slug=${slug}`);
   const data = await res.json();
 
