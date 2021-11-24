@@ -11,8 +11,8 @@ export default function SocialMedia() {
   useEffect(() => setMounted(true), []);
 
   return (
-    <div className='flex justify-items-end items-center h-10 mt-2'>
-      <div className=' flex justify-around items-center w-3/4'>
+    <div className='container items-center mx-auto h-10 max-w-screen-xl'>
+      <div className='flex justify-around items-center w-full h-full '>
         <Link href='https://github.com/AlexMNet'>
           <a
             target='_blank'
@@ -37,11 +37,9 @@ export default function SocialMedia() {
             <BsInstagram />
           </a>
         </Link>
-      </div>
-      <div className='flex justify-self-end w-1/4'>
         {!mounted ? null : (
           <button
-            className='ml-auto pr-5'
+            className=''
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           >
             {theme === 'dark' ? (
