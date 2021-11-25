@@ -5,7 +5,7 @@ export default function Projects() {
   return (
     <section className='bg-gray-100 dark:bg-gray-900 py-20 px-10' id='projects'>
       <div className='container mx-auto'>
-        <h1 className='text-6xl text-white dark:text-gray-400 font-bold leading-normal mt-0 mb-2 text-center'>
+        <h1 className='text-6xl dark:text-gray-400 font-medium leading-normal mt-0 mb-2 text-center'>
           Projects
         </h1>
         <hr className='border-0 bg-blue-500 text-blue-500 h-px max-w-md mx-auto' />
@@ -17,11 +17,13 @@ export default function Projects() {
             animateOnce={true}
           >
             <div className='container mx-auto shadow-lg rounded-lg max-w-md hover:shadow-2xl transition duration-300 bg-white'>
-              <img
-                src='/images/dev-portfolio.png'
-                alt=''
-                className='rounded-t-lg w-full'
-              />
+              <Link href='/dev-portfolio-site'>
+                <img
+                  src='/images/dev-portfolio.png'
+                  alt=''
+                  className='rounded-t-lg w-full'
+                />
+              </Link>
               <div className='p-6 border-t-2 border-blue-500'>
                 <h1 className='md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 '>
                   Dev Portfolio
@@ -58,11 +60,13 @@ export default function Projects() {
             animateOnce={true}
           >
             <div className='container mx-auto shadow-lg rounded-lg max-w-md hover:shadow-2xl transition duration-300 bg-white'>
-              <img
-                src='/images/plate-calculator.jpg'
-                alt=''
-                className='rounded-t-lg w-full'
-              />
+              <Link href='/blog-plate-calculator'>
+                <img
+                  src='/images/plate-calculator.jpg'
+                  alt=''
+                  className='rounded-t-lg w-full'
+                />
+              </Link>
               <div className='p-6 border-t-2 border-blue-500'>
                 <h1 className='md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 '>
                   Plate Calculator
@@ -91,11 +95,13 @@ export default function Projects() {
             animateOnce={true}
           >
             <div className='container mx-auto shadow-lg rounded-lg max-w-md hover:shadow-2xl transition duration-300 bg-white'>
-              <img
-                src='/images/hot-sauce-app.png'
-                alt=''
-                className='rounded-t-lg w-full'
-              />
+              <Link href='/hot-sauce-collection-app'>
+                <img
+                  src='/images/hot-sauce-app.png'
+                  alt=''
+                  className='rounded-t-lg w-full'
+                />
+              </Link>
               <div className='p-6 border-t-2 border-blue-500'>
                 <h1 className='md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 '>
                   Hot Sauce Collection
