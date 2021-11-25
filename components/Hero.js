@@ -1,9 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Particles from 'react-tsparticles';
+import particleConfig from '../utils/particleConfig';
 
 export default function Hero() {
   return (
     <section className='relative'>
+      <Particles
+        style={{ zIndex: -100 }}
+        className='absolute top-0 left-0 h-full w-screen'
+        id='tsparticles'
+        options={particleConfig}
+      />
       <div className=' container px-10 mt-10 md:py-14 mx-auto flex flex-col-reverse md:flex-row '>
         {/* Left Content */}
         <div className='flex flex-col flex-1 items-left text-left justify-center'>
