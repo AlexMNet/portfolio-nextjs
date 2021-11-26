@@ -29,7 +29,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Navbar toggleDropdown={toggleDropdown} open={open} />
-      <main>{children}</main>
+      <main className='flex-auto'>{children}</main>
       <Footer />
     </>
   );
