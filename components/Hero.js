@@ -12,7 +12,8 @@ export default function Hero() {
         id='tsparticles'
         options={particleConfig}
       />
-      <div className=' container px-10 mt-10 md:py-14 mx-auto flex flex-col-reverse md:flex-row '>
+      {/* HERO */}
+      <div className='container px-10 mt-10 md:py-14 mx-auto flex flex-col-reverse md:flex-row'>
         {/* Left Content */}
         <div className='flex flex-col flex-1 items-left text-left justify-center'>
           <h1 className='text-5xl md:text-6xl font-normal leading-normal mt- mb-2'>
@@ -48,6 +49,7 @@ export default function Hero() {
             />
           </svg>
         </div>
+        {/* Right Content Image */}
         <div className='flex-1 flex items-center justify-center md:justify-end'>
           <div className='w-3/4 '>
             <Image

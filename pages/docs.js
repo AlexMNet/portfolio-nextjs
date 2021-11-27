@@ -3,8 +3,8 @@ import Link from 'next/link';
 export default function Docs({ posts }) {
   return (
     <section>
-      <div className='bg-blue-500 dark:bg-gray-800 p-4'>
-        <h1 className='text-4xl md:text-5xl font-normal leading-normal text-gray-200 mb-2 text-center'>
+      <div className='p-4'>
+        <h1 className='text-4xl md:text-5xl font-normal leading-normal text-gray-800 dark:text-gray-200 mb-2 text-center'>
           Project Documentation
         </h1>
       </div>

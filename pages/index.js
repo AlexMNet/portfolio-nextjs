@@ -8,6 +8,7 @@ import SocialMedia from '../components/SocialMedia';
 import Projects from '../components/Projects.js';
 import Footer from '../components/Footer';
 import GithubStats from '../components/GithubStats';
+import Technologies from '../components/Technologies';
 
 export default function Home({ Component, pageProps }) {
   //Enable smooth scrolling on iOS devices
@@ -42,9 +43,9 @@ export default function Home({ Component, pageProps }) {
           href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'
         ></link>
       </Head>
-      <SocialMedia />
       <Hero />
       <Projects />
+      <Technologies />
       {/* <GithubStats /> */}
     </div>
   );
