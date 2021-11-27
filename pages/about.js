@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function About() {
   return (
     <section>
-      <div className='container mx-auto mb-20 items-center flex flex-col md:flex-row text-center md:mt-32'>
+      <div className='container mx-auto mb-20 items-center flex flex-col lg:flex-row text-center md:mt-32'>
         <div className='flex-1 py-10 px-10'>
           <Image
             src='/images/alex.jpg'
@@ -16,7 +16,7 @@ export default function About() {
             className='rounded-2xl'
           />
         </div>
-        <div className='flex-1 px-10 max-w-2xl text-center mx-auto flex-grow'>
+        <div className=' px-10 max-w-2xl text-center mx-auto flex-grow'>
           <h1 className='text-6xl mb-4 md:mb-6'>About </h1>
           <div className='pb-5'>
             <p className='text-gray-600 leading-8'>
