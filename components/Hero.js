@@ -5,7 +5,7 @@ import particleConfig from '../utils/particleConfig';
 
 export default function Hero() {
   return (
-    <section className='relative'>
+    <section className='relative shadow-lg'>
       <Particles
         style={{ zIndex: -100 }}
         className='absolute top-0 left-0 h-full w-screen'

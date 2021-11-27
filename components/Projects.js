@@ -3,9 +3,12 @@ import ScrollAnimation from 'react-animate-on-scroll';
 
 export default function Projects() {
   return (
-    <section className='bg-gray-100 dark:bg-gray-900 py-20 px-10' id='projects'>
+    <section
+      className='shadow bg-gray-200 dark:bg-gray-900 py-20 px-10'
+      id='projects'
+    >
       <div className='container mx-auto'>
-        <h1 className='text-6xl dark:text-gray-400 font-medium leading-normal mt-0 mb-2 text-center'>
+        <h1 className='text-6xl  dark:text-gray-400 font-medium leading-normal mt-0 mb-2 text-center'>
           Projects
         </h1>
         <hr className='border-0 bg-blue-500 text-blue-500 h-px max-w-md mx-auto' />
