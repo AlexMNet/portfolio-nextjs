@@ -7,8 +7,8 @@ async function sendEmail(req, res) {
   try {
     //Send email to me
     await sendgrid.send({
-      to: 'alexmaldonadodev@gmail.com',
-      from: 'alex@alexmaldonado.dev',
+      to: `${process.env.ADMIN_EMAIL}`,
+      from: `${process.env.WEBSITE_EMAIL}`,
       subject: `${req.body.subject}`,
       html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       <html lang="en">
@@ -51,7 +51,7 @@ async function sendEmail(req, res) {
     //Send Client Email
     await sendgrid.send({
       to: `${req.body.email}`,
-      from: 'alex@alexmaldonado.dev',
+      from: `${process.env.WEBSITE_EMAIL}`,
       subject: 'Thank you for reaching out...',
       html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       <html lang="en">
