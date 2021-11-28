@@ -53,7 +53,7 @@ export default function Home({ Component, pageProps, lastSixRepos }) {
 
 export async function getServerSideProps() {
   const res = await fetch(
-    `https://api.github.com/search/repositories?q=user:AlexMNet+sort:author-date-asc`
+    `https://api.github.com/search/repositories?q=user:AlexMNet+sort:updated`
   );
 
   const data = await res.json();
