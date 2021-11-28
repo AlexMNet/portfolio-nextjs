@@ -26,7 +26,7 @@ export default function Docs({ posts }) {
                 <div className='flex flex-col '>
                   <div>
                     <img
-                      className='object-scale-down round-md'
+                      className='w-9'
                       src={post.User.userAvatar.url}
                       alt=''
                     />
