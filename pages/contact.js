@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 export default function Contact() {
   const [fullname, setFullname] = useState('');
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+
+  const onChange = (value) => {
+    console.log('Captcha value:', value);
+  };
 
   //Form validation State
   const [errors, setErrors] = useState({});
@@ -53,10 +58,10 @@ export default function Contact() {
 
       const res = await fetch('/api/sendgrid', {
         body: JSON.stringify({
-          email: email,
-          fullname: fullname,
-          subject: subject,
-          message: message,
+          email,
+          fullname,
+          subject,
+          message,
         }),
         headers: {
           'Content-Type': 'application/json',
@@ -105,6 +110,13 @@ export default function Contact() {
           <h1 className='text-2xl font-bold dark:text-gray-50'>
             Send a message
           </h1>
+          <div className='mx-auto mt-5'>
+            <ReCAPTCHA
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+              onChange={onChange}
+              size='compact'
+            />
+          </div>
           <label
             htmlFor='fullname'
             className='text-gray-500 font-light mt-8 dark:text-gray-50 mr-auto'
@@ -174,10 +186,8 @@ export default function Contact() {
           {errors.message && (
             <p className='text-xs mt-1 text-red-500'>Must Provide A Message</p>
           )}
-          {showSuccessMessage && (
-            <p className='text-green-500'>Message Sent!</p>
-          )}
-          <div className='flex flex-col justify-center items-center md:items-start  '>
+
+          <div className='flex  justify-center items-center md:items-start  '>
             <button className=' px-10 mt-8 py-2 bg-blue-500 text-gray-50 font-light rounded-md text-lg flex flex-row items-center transition-all duration-150 ease-in-out hover:bg-blue-800 transform hover:-translate-y-1 hover:scale-110'>
               {buttonText}
               <svg
@@ -188,13 +198,25 @@ export default function Contact() {
                 stroke='currentColor'
               >
                 <path
-                  stroke-linecap='round'
-                  stroke-linejoin='round'
-                  stroke-width='2'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth='2'
                   d='M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'
                 />
               </svg>
             </button>
+          </div>
+          <div className='mt-5'>
+            {showSuccessMessage && (
+              <p className='text-green-500 font-mono'>
+                Thank you! Message Sent!
+              </p>
+            )}
+            {showfailureMessage && (
+              <p className='text-red-500 font-mono'>
+                Something went wrong. Try again!
+              </p>
+            )}
           </div>
         </form>
       </div>
