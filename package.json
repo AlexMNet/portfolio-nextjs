@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.6.0",
     "@tailwindcss/typography": "^0.4.1",
     "animate.css": "^4.1.1",
     "markdown-it": "^12.2.0",
