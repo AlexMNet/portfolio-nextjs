@@ -10,7 +10,7 @@ import Footer from '../components/Footer';
 import GithubStats from '../components/GithubStats';
 import Technologies from '../components/Technologies';
 
-export default function Home({ Component, pageProps }) {
+export default function Home({ Component, pageProps, lastSixRepos }) {
   //Enable smooth scrolling on iOS devices
   useEffect(() => {
     smoothscroll.polyfill();
@@ -46,7 +46,28 @@ export default function Home({ Component, pageProps }) {
       <Hero />
       <Projects />
       <Technologies />
-      {/* <GithubStats /> */}
+      <GithubStats repos={lastSixRepos} />
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const res = await fetch(
+    `https://api.github.com/search/repositories?q=user:AlexMNet+sort:author-date-asc`
+  );
+
+  const data = await res.json();
+
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+
+  let repos = data.items;
+  let lastSixRepos = repos.splice(0, 6);
+
+  return {
+    props: { lastSixRepos },
+  };
 }
