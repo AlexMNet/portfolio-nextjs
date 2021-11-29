@@ -13,7 +13,7 @@ export default function GithubStats() {
 
   //Error is not being caught if url is incorrect. error shows up in the data object.
   //So add data.errros to catch
-  if (error || data.errors)
+  if (error || (data && data.errors))
     return (
       <section className='bg-gray-200 dark:bg-gray-800'>
         <div className='container flex flex-col mx-auto text-center justify-center items-center px-10 pt-10 pb-20 md:pb-32 '>
