@@ -57,7 +57,8 @@ export default function About() {
               <RoughNotation
                 type='underline'
                 show={inView}
-                color='#FDE68A'
+                animate={inView}
+                color='#DC2626'
                 iterations={5}
                 animationDelay={1500}
               >
@@ -68,7 +69,8 @@ export default function About() {
               <RoughNotation
                 type='underline'
                 show={inView}
-                color='#FDE68A'
+                animate={inView}
+                color='#DC2626'
                 iterations={5}
                 animationDelay={2000}
               >
