@@ -8,7 +8,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html className='h-full'>
         <Head />
         <body className='bg-gray-100 dark:bg-black relative min-h-screen flex flex-col'>
           <Main className='flex-auto' />
