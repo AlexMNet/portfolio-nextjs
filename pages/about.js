@@ -1,8 +1,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { RoughNotation } from 'react-rough-notation';
+import { useInView } from 'react-intersection-observer';
 
 export default function About() {
+  //useInView is used to detect if a div or ele is in view.
+  //inView will  be true when in view and can be used to se animations
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+  });
+
   return (
     <section>
       <div className='container mx-auto mb-20 items-center flex flex-col lg:flex-row text-center md:mt-32'>
@@ -40,7 +47,7 @@ export default function About() {
               , I completely fell in love with all things Web Development.
             </p>
             <br />
-            <p className='text-gray-600 leading-8'>
+            <p ref={ref} className='text-gray-600 leading-8'>
               In March of 2021 I joined a bootcamp called{' '}
               <a className='text-blue-500' href='https://reskillamericans.org/'>
                 Reskill Americans
@@ -49,10 +56,10 @@ export default function About() {
               my time in this bootcamp I discoved my passion for{' '}
               <RoughNotation
                 type='underline'
-                show={true}
+                show={inView}
                 color='#FDE68A'
                 iterations={5}
-                animationDelay={2500}
+                animationDelay={1500}
               >
                 mentoring
               </RoughNotation>{' '}
@@ -60,10 +67,10 @@ export default function About() {
               but I also love helping others learn and understand{' '}
               <RoughNotation
                 type='underline'
-                show={true}
+                show={inView}
                 color='#FDE68A'
                 iterations={5}
-                animationDelay={3500}
+                animationDelay={2000}
               >
                 anyone can learn to code!
               </RoughNotation>{' '}
