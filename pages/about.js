@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { RoughNotation } from 'react-rough-notation';
 
 export default function About() {
   return (
@@ -21,19 +22,53 @@ export default function About() {
           <div className='pb-5'>
             <p className='text-gray-600 leading-8'>
               I started my self-taught journery of learning to code in April of
-              2020. Learning mostly through Udemy courses, YouTube, the Odin
-              Project and Free Code Camp, I completely fell in love with all
-              things Web Development.
+              2020. Learning mostly through{' '}
+              <a className='text-blue-500' href='https://www.udemy.com/'>
+                Udemy
+              </a>{' '}
+              courses, YouTube,{' '}
+              <a
+                className='text-blue-500'
+                href='https://www.theodinproject.com/'
+              >
+                The Odin Project
+              </a>{' '}
+              and{' '}
+              <a className='text-blue-500' href='https://www.freecodecamp.org'>
+                Free Code Camp
+              </a>
+              , I completely fell in love with all things Web Development.
             </p>
             <br />
             <p className='text-gray-600 leading-8'>
-              In March of 2021 I joined a bootcamp called Reskill Americans
-              which was intended for undrepresented minorites in Tech. During my
-              time in this bootcamp I discoved my passion for mentoring other
-              students that were struggling. I love working on projects but I
-              also love helping others learn and understand that anyone can
-              learn to code!
+              In March of 2021 I joined a bootcamp called{' '}
+              <a className='text-blue-500' href='https://reskillamericans.org/'>
+                Reskill Americans
+              </a>{' '}
+              which was intended for underrepresented minorites in Tech. During
+              my time in this bootcamp I discoved my passion for{' '}
+              <RoughNotation
+                type='underline'
+                show={true}
+                color='#FDE68A'
+                iterations={5}
+                animationDelay={2500}
+              >
+                mentoring
+              </RoughNotation>{' '}
+              other students that were struggling. I love working on projects
+              but I also love helping others learn and understand{' '}
+              <RoughNotation
+                type='underline'
+                show={true}
+                color='#FDE68A'
+                iterations={5}
+                animationDelay={3500}
+              >
+                anyone can learn to code!
+              </RoughNotation>{' '}
             </p>
+
             <br />
             <p className='text-gray-600 leading-8'>
               My goal is not only to join the work force and contine learning

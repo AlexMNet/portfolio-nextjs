@@ -81,13 +81,14 @@ export default function GithubStats() {
           <Link href='https://github.com/AlexMNet'>
             <a
               target='_blank'
-              className='text-8xl hover:text-blue-500 hover:scale-110 transform hover:-translate-y-1 transition duration-500 ease-in-out'
+              className=' hover:text-blue-500 hover:scale-110 transform hover:-translate-y-1 transition duration-500 ease-in-out'
             >
-              <BsGithub />
+              <BsGithub className='text-8xl' />
+              <small className='font-mono'>Visit Github</small>
             </a>
           </Link>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-8 text-left mt-10 font-mono'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-8 text-left mt-10 font-mono break-words'>
           {repos &&
             repos.map(({ id, full_name, description, html_url }) => (
               <div key={id} className='mb-10 max-w-sm'>
