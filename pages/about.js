@@ -7,7 +7,7 @@ export default function About() {
   //useInView is used to detect if a div or ele is in view.
   //inView will  be true when in view and can be used to se animations
   const { ref, inView, entry } = useInView({
-    threshold: 0,
+    threshold: 1,
   });
 
   return (
