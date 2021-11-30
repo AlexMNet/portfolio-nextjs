@@ -3,14 +3,35 @@ import '../styles/global.css';
 import { ThemeProvider } from 'next-themes';
 import NextNProgress from 'nextjs-progressbar';
 import Layout from '../components/Layout';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
   return (
     <ThemeProvider attribute='class' defaultTheme='light' enableSystem={false}>
       <NextNProgress height={5} />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <motion.div
+        key={router.pathname}
+        initial='initial'
+        animate='animate'
+        transition={{ duration: 0.7, ease: 'easeInOut' }}
+        variants={{
+          initial: {
+            opacity: 0,
+            // x: '-100%',
+          },
+          animate: {
+            opacity: 1,
+            // x: '0%',
+          },
+        }}
+        exit={{ opacity: 0 }}
+      >
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </motion.div>
     </ThemeProvider>
   );
 }

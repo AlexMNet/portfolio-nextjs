@@ -2,8 +2,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { RoughNotation } from 'react-rough-notation';
 import { useInView } from 'react-intersection-observer';
+import withTransition from '../HOC/withTransition';
 
-export default function About() {
+function About() {
   //useInView is used to detect if a div or ele is in view.
   //inView will  be true when in view and can be used to se animations
   const { ref, inView, entry } = useInView({
@@ -102,3 +103,5 @@ export default function About() {
     </section>
   );
 }
+
+export default withTransition(About);
