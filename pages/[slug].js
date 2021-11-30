@@ -7,12 +7,11 @@ export default function Post({ post }) {
   const htmlContent = md.render(post.Content);
   return (
     <article>
-      <div className='container mx-auto p-10 flex flex-col items-center'>
-        <section
-          className='prose prose-dark'
+      <div className='container mx-auto p-10 items-center w-screen'>
+        <article
+          className='prose dark:prose-dark prose-blue lg:prose-xl '
           dangerouslySetInnerHTML={{ __html: htmlContent }}
-        ></section>
-        <h1>Article content coming soon...</h1>
+        ></article>
         <Link href='/'>
           <a className='text-blue-500 underline hover:text-blue-700 text-center'>
             Back Home
@@ -54,5 +53,6 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { post },
+    revalidate: 60,
   };
 }
