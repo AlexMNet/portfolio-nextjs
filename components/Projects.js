@@ -63,7 +63,7 @@ export default function Projects() {
             animateOnce={true}
           >
             <div className='container mx-auto shadow-lg rounded-lg max-w-md hover:shadow-2xl transition duration-300 bg-white'>
-              <Link href='/blog-plate-calculator'>
+              <Link href='/'>
                 <img
                   src='/images/plate-calculator.jpg'
                   alt=''
@@ -98,7 +98,7 @@ export default function Projects() {
             animateOnce={true}
           >
             <div className='container mx-auto shadow-lg rounded-lg max-w-md hover:shadow-2xl transition duration-300 bg-white'>
-              <Link href='/hot-sauce-collection-app'>
+              <Link href='/'>
                 <img
                   src='/images/hot-sauce-app.png'
                   alt=''
