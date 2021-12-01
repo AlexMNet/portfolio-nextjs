@@ -10,7 +10,7 @@ export default function Post({ post }) {
   return (
     <section>
       <div className='container mx-auto flex flex-col items-center justify-center mb-20 max-w-5xl p-10'>
-        <header className='flex flex-col gap-3'>
+        <header className='flex flex-col gap-3 mb-10'>
           <h1 className='text-4xl md:text-6xl dark:text-gray-400'>
             {post.Title}
           </h1>
@@ -35,9 +35,8 @@ export default function Post({ post }) {
             </a>
           </div>
         </header>
-        <hr />
         <article className=' w-full'>
-          <ReactMarkdown className='prose dark:prose-dark prose-blue md:prose-xl lg:prose-2xl'>
+          <ReactMarkdown className='prose dark:prose-dark prose-blue md:prose-xl'>
             {post.Content}
           </ReactMarkdown>
         </article>
