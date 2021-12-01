@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import MarkdownIt from 'markdown-it';
 import ReactMarkdown from 'react-markdown';
+import CodeBlock from '../components/utils/codeblock';
 
 export default function Post({ post }) {
   // const md = new MarkdownIt();
@@ -36,7 +37,10 @@ export default function Post({ post }) {
           </div>
         </header>
         <article className=' w-full'>
-          <ReactMarkdown className='prose dark:prose-dark prose-blue md:prose-xl'>
+          <ReactMarkdown
+            components={CodeBlock}
+            className='prose dark:prose-dark prose-blue md:prose-xl'
+          >
             {post.Content}
           </ReactMarkdown>
         </article>
