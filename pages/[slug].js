@@ -1,45 +1,48 @@
 import Link from 'next/link';
 import React from 'react';
 import MarkdownIt from 'markdown-it';
+import ReactMarkdown from 'react-markdown';
 
 export default function Post({ post }) {
-  const md = new MarkdownIt();
-  const htmlContent = md.render(post.Content);
+  // const md = new MarkdownIt();
+  // const htmlContent = md.render(post.Content);
 
   return (
-    <article>
-      <div className='container mx-auto p-10 justify-center items-start text-left flex flex-col '>
-        <div className='mb-5'>
-          <h1 className='text-4xl md:text-6xl'>{post.Title}</h1>
+    <section>
+      <div className='container mx-auto flex flex-col items-center justify-center mb-20 max-w-5xl p-10'>
+        <header className='flex flex-col gap-3'>
+          <h1 className='text-4xl md:text-6xl dark:text-gray-400'>
+            {post.Title}
+          </h1>
           <small>
             by: <span className='text-blue-500'>{post.User.username}</span>
           </small>
           <small className='block'>
             {new Date(post.createdAt).toDateString()}
           </small>
-          <div className='flex gap-2 w-20'>
+          <div className='flex gap-2 flex-wrap'>
             {post.badges.map(({ id, url }) => (
-              <img key={id} src={url} alt='' />
+              <img key={id} src={url} alt='' className='md:w-25' />
             ))}
           </div>
-        </div>
-        <img src={post.blogImg.url} alt='' style={{ width: '400px' }} />
-        <article
-          className='prose dark:prose-dark prose-blue'
-          dangerouslySetInnerHTML={{ __html: htmlContent }}
-        ></article>
-        <Link href='/'>
-          <a className='text-blue-500 underline hover:text-blue-700 text-center'>
-            Back Home
-          </a>
-        </Link>
-        <Link href='/docs'>
-          <a className='text-blue-500 underline hover:text-blue-700 text-center'>
-            Back to Docs
-          </a>
-        </Link>
+          <img src={post.blogImg.url} alt='' />
+          <div className='flex justify-around'>
+            <a href='' className='text-blue-500 underline'>
+              Live
+            </a>
+            <a href='' className='text-blue-500 underline'>
+              Github
+            </a>
+          </div>
+        </header>
+        <hr />
+        <article className=' w-full'>
+          <ReactMarkdown className='prose dark:prose-dark prose-blue md:prose-xl lg:prose-2xl'>
+            {post.Content}
+          </ReactMarkdown>
+        </article>
       </div>
-    </article>
+    </section>
   );
 }
 
