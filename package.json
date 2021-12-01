@@ -23,6 +23,7 @@
     "react-loadingg": "^1.7.2",
     "react-markdown": "^7.1.1",
     "react-rough-notation": "^1.0.1",
+    "react-syntax-highlighter": "^15.4.5",
     "react-tsparticles": "^1.37.4",
     "smoothscroll-polyfill": "^0.4.4",
     "swr": "^1.0.1"
