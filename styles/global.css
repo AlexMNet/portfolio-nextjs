@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.clip {
-  clip: polygon (0 0, 100% 0, 100% 200px, 0 100%);
-}
-
 html {
   scroll-behavior: smooth;
 }

@@ -1,12 +1,8 @@
 import * as smoothscroll from 'smoothscroll-polyfill';
 import React, { useState, useEffect } from 'react';
-import Document, { Html, Main, NextScript } from 'next/document';
 import Head from 'next/head';
-import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
-import SocialMedia from '../components/SocialMedia';
 import Projects from '../components/Projects.js';
-import Footer from '../components/Footer';
 import GithubStats from '../components/GithubStats';
 import Technologies from '../components/Technologies';
 
