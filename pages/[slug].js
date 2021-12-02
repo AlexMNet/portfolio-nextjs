@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import Moment from 'react-moment';
 import CodeBlock from '../components/utils/codeblock';
 import rehypeRaw from 'rehype-raw';
 import rehypeSlug from 'rehype-slug';
@@ -36,6 +37,9 @@ export default function Post({ post }) {
           </small>
           <small className='block'>
             {new Date(post.createdAt).toDateString()}
+          </small>
+          <small className='block text-xs text-gray-400'>
+            Updated: <Moment fromNow>{post.updatedAt}</Moment>
           </small>
           <div className='flex gap-2 flex-wrap'>
             {post.badges.map(({ id, url }) => (
