@@ -44,10 +44,18 @@ export default function Post({ post }) {
           </div>
           <img src={post.blogImg.url} alt='' />
           <div className='flex justify-around'>
-            <a href='' className='text-blue-500 underline'>
+            <a
+              href={post.liveLink || '/'}
+              target='_blank'
+              className='text-blue-500 underline'
+            >
               Live
             </a>
-            <a href='' className='text-blue-500 underline'>
+            <a
+              href={post.githubLink || ''}
+              target='_blank'
+              className='text-blue-500 underline'
+            >
               Github
             </a>
           </div>
