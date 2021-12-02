@@ -1,12 +1,16 @@
 import Link from 'next/link';
 import React from 'react';
-import MarkdownIt from 'markdown-it';
 import ReactMarkdown from 'react-markdown';
 import CodeBlock from '../components/utils/codeblock';
+import rehypeRaw from 'rehype-raw';
+import rehypeSlug from 'rehype-slug';
+import DOMPurify from 'isomorphic-dompurify';
 
 export default function Post({ post }) {
-  // const md = new MarkdownIt();
-  // const htmlContent = md.render(post.Content);
+  //Protect against XSS attacks
+  const sanitizedContent = DOMPurify.sanitize(post.Content, {
+    ALLOWED_TAGS: ['>'],
+  });
 
   return (
     <section>
@@ -40,6 +44,7 @@ export default function Post({ post }) {
           <ReactMarkdown
             components={CodeBlock}
             className='prose dark:prose-dark prose-blue md:prose-xl'
+            rehypePlugins={[rehypeRaw, rehypeSlug]}
           >
             {post.Content}
           </ReactMarkdown>
