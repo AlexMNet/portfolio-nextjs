@@ -15,6 +15,18 @@ export default function Post({ post }) {
   return (
     <section>
       <div className='container mx-auto flex flex-col items-center justify-center mb-20 max-w-5xl p-10'>
+        <div className='flex flex-row mr-auto gap-4 mb-3'>
+          <Link href='/'>
+            <a className='text-gray-500 underline hover:text-blue-700 text-center'>
+              Home
+            </a>
+          </Link>
+          <Link href='/docs'>
+            <a className='text-gray-500 underline hover:text-blue-700 text-center'>
+              Docs
+            </a>
+          </Link>
+        </div>
         <header className='flex flex-col gap-3 mb-10'>
           <h1 className='text-4xl md:text-6xl dark:text-gray-400'>
             {post.Title}

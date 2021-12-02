@@ -11,8 +11,8 @@ export default function Docs({ posts }) {
       <div className='container py-4 mx-auto max-w-3xl mb-10'>
         <div className='text-center'>
           <Link href='/'>
-            <a className='text-blue-500 underline hover:text-blue-700 text-center'>
-              Back Home
+            <a className='text-gray-500 underline hover:text-blue-700 text-center'>
+              Home
             </a>
           </Link>
         </div>
@@ -21,7 +21,7 @@ export default function Docs({ posts }) {
             posts.map((post, idx) => (
               <div
                 key={post.id}
-                className='flex flex-col justify-items-start items-centerbg-gray-500 m-10'
+                className='flex flex-col justify-items-start m-10'
               >
                 <div className='flex flex-col '>
                   <div>
