@@ -90,9 +90,9 @@ export default function GithubStats() {
         </div>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8 text-left mt-10 font-mono break-words'>
           {repos &&
-            repos.map(({ id, full_name, description, html_url }) => (
+            repos.map(({ id, name, description, html_url }) => (
               <div key={id} className='mb-10 max-w-sm'>
-                <h1 className='text-xl mb-2'>{full_name}</h1>
+                <h1 className='text-xl mb-2'>{name}</h1>
                 <p className='text-sm text-gray-500 mb-2'>
                   {description ? description : 'No description'}
                 </p>
