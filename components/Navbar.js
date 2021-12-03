@@ -1,6 +1,9 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Navbar({ toggleDropdown, open }) {
+  const router = useRouter();
+
   return (
     <>
       <nav className='flex justify-center items-center h-16  text-black  shadow-sm font-mono sticky top-0 z-10 bg-white dark:bg-black dark:text-gray-300 backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200'>
@@ -50,19 +53,53 @@ export default function Navbar({ toggleDropdown, open }) {
           </div>
           <div className='pr-8 md:block hidden'>
             <Link href='/'>
-              <a className='p-4 hover:text-blue-500'>Home</a>
+              <a
+                className={`p-4 hover:text-blue-500 ${
+                  router.asPath === '/' ? 'border-b-2 border-blue-500' : ''
+                } `}
+              >
+                Home
+              </a>
             </Link>
             <Link href='/#projects'>
-              <a className='p-4 hover:text-blue-500'>Projects</a>
+              <a
+                className={`p-4 hover:text-blue-500 ${
+                  router.asPath === '/#projects'
+                    ? 'border-b-2 border-blue-500'
+                    : ''
+                } `}
+              >
+                Projects
+              </a>
             </Link>
             <Link href='/docs'>
-              <a className='p-4 hover:text-blue-500'>Docs</a>
+              <a
+                className={`p-4 hover:text-blue-500 ${
+                  router.asPath === '/docs' ? 'border-b-2 border-blue-500' : ''
+                } `}
+              >
+                Docs
+              </a>
             </Link>
             <Link href='/about'>
-              <a className='p-4 hover:text-blue-500'>About</a>
+              <a
+                className={`p-4 hover:text-blue-500 ${
+                  router.asPath === '/about' ? 'border-b-2 border-blue-500' : ''
+                } `}
+              >
+                About
+              </a>
             </Link>
             <Link href='/contact'>
-              <a className='p-4 hover:text-blue-500'>Contact</a>
+              <a
+                className={`p-4 hover:text-blue-500 ${
+                  router.asPath === '/contact'
+                    ? 'border-b-2 border-blue-500'
+                    : ''
+                } `}
+              >
+                Contact
+              </a>
             </Link>
           </div>
         </div>

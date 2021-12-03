@@ -4,7 +4,7 @@ import ScrollAnimation from 'react-animate-on-scroll';
 export default function Projects() {
   return (
     <section
-      className='shadow bg-gray-200 dark:bg-gray-900 py-20 px-10'
+      className=' bg-gray-200 dark:bg-gray-900 py-20 px-10'
       id='projects'
     >
       <div className='container mx-auto'>
