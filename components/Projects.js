@@ -82,6 +82,11 @@ export default function Projects() {
                 </span>
                 {/* Github and project links */}
                 <div className='mt-3 flex justify-start'>
+                  <Link href='https://expo.dev/@alexmnet/platecalculator'>
+                    <a className='text-blue-500 underline mr-5' target='_blank'>
+                      Live on Expo Go
+                    </a>
+                  </Link>
                   <Link href='https://github.com/AlexMNet/plateCalculator-React_Native'>
                     <a className='text-blue-500 underline' target='_blank'>
                       Github
