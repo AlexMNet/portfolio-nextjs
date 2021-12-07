@@ -46,6 +46,8 @@ module.exports = {
       animation: {
         ping: 'ping 2500ms cubic-bezier(0, 0, 0.2, 1) infinite;',
         fadeIn: 'fadeIn 2s ease-in forwards',
+        spin: 'spin 500ms linear',
+        spinFast: 'spin 150ms linear',
       },
       keyframes: {
         fadeIn: {
