@@ -1,8 +1,13 @@
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { navLinks } from '../utils/data/navLinks';
+import { BiMenuAltRight } from 'react-icons/bi';
+import { GrClose } from 'react-icons/gr';
 
 export default function Navbar({ toggleDropdown, open }) {
   const router = useRouter();
+  const [animation, setAnimation] = useState(false);
 
   return (
     <>
@@ -20,87 +25,33 @@ export default function Navbar({ toggleDropdown, open }) {
             onClick={toggleDropdown}
           >
             {open ? (
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-6 w-6'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M6 18L18 6M6 6l12 12'
-                />
-              </svg>
+              <GrClose
+                size={25}
+                onClick={() => setAnimation(true)}
+                onAnimationEnd={() => setAnimation(false)}
+                className={`${animation && 'animate-spin'}`}
+              />
             ) : (
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-6 w-6 animate-pulse'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M4 6h16M4 12h16m-7 6h7'
-                />
-              </svg>
+              <BiMenuAltRight
+                size={35}
+                onClick={() => setAnimation(true)}
+                onAnimationEnd={() => setAnimation(false)}
+                className={`${animation && 'animate-spinFast'}`}
+              />
             )}
           </div>
           <div className='pr-8 md:block hidden'>
-            <Link href='/'>
-              <a
-                className={`p-4 hover:text-blue-500 ${
-                  router.asPath === '/' ? 'border-b-2 border-blue-500' : ''
-                } `}
-              >
-                Home
-              </a>
-            </Link>
-            <Link href='/#projects'>
-              <a
-                className={`p-4 hover:text-blue-500 ${
-                  router.asPath === '/#projects'
-                    ? 'border-b-2 border-blue-500'
-                    : ''
-                } `}
-              >
-                Projects
-              </a>
-            </Link>
-            <Link href='/docs'>
-              <a
-                className={`p-4 hover:text-blue-500 ${
-                  router.asPath === '/docs' ? 'border-b-2 border-blue-500' : ''
-                } `}
-              >
-                Docs
-              </a>
-            </Link>
-            <Link href='/about'>
-              <a
-                className={`p-4 hover:text-blue-500 ${
-                  router.asPath === '/about' ? 'border-b-2 border-blue-500' : ''
-                } `}
-              >
-                About
-              </a>
-            </Link>
-            <Link href='/contact'>
-              <a
-                className={`p-4 hover:text-blue-500 ${
-                  router.asPath === '/contact'
-                    ? 'border-b-2 border-blue-500'
-                    : ''
-                } `}
-              >
-                Contact
-              </a>
-            </Link>
+            {navLinks.map(({ id, url, text }) => (
+              <Link href={url} key={id}>
+                <a
+                  className={`p-4 hover:text-blue-500 ${
+                    router.asPath === url ? 'border-b-2 border-blue-500' : ''
+                  } `}
+                >
+                  {text}
+                </a>
+              </Link>
+            ))}
           </div>
         </div>
       </nav>
@@ -116,46 +67,16 @@ export default function Navbar({ toggleDropdown, open }) {
         {/* hide links because they still show with height zero. */}
         {open && (
           <>
-            <Link href='/'>
-              <a
-                onClick={toggleDropdown}
-                className='p-4 hover:text-blue-200 dark:text-gray-400'
-              >
-                Home
-              </a>
-            </Link>
-            <Link href='/#projects'>
-              <a
-                onClick={toggleDropdown}
-                className='p-4 hover:text-blue-200 dark:text-gray-400'
-              >
-                Projects
-              </a>
-            </Link>
-            <Link href='/docs'>
-              <a
-                onClick={toggleDropdown}
-                className='p-4 hover:text-blue-200 dark:text-gray-400'
-              >
-                Docs
-              </a>
-            </Link>
-            <Link href='/about'>
-              <a
-                onClick={toggleDropdown}
-                className='p-4 hover:text-blue-200 dark:text-gray-400'
-              >
-                About
-              </a>
-            </Link>
-            <Link href='/contact'>
-              <a
-                onClick={toggleDropdown}
-                className='p-4 hover:text-blue-200 dark:text-gray-400'
-              >
-                Contact
-              </a>
-            </Link>
+            {navLinks.map(({ id, url, text }) => (
+              <Link href={url} key={id}>
+                <a
+                  onClick={toggleDropdown}
+                  className='p-4 hover:text-blue-200 dark:text-gray-400'
+                >
+                  {text}
+                </a>
+              </Link>
+            ))}
           </>
         )}
       </div>
