@@ -56,6 +56,7 @@ const options = {
         enable: true,
         value_area: 800,
       },
+      limit: 40,
       value: 80,
     },
     opacity: {
