@@ -16,7 +16,10 @@ export default function Home({ Component, pageProps }) {
     <div>
       <Head id='home'>
         <title>Alex Maldonado | Web Developer</title>
-        <meta name='description' content='' />
+        <meta
+          name='description'
+          content='Personal Web Developer Portfolio. See my projects!'
+        />
         <meta
           property='og:image'
           content='https://res.cloudinary.com/dtbtmmgxx/image/upload/v1639101147/large_dev_portfolio_dark_43823a7947.png'
