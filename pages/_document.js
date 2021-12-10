@@ -10,6 +10,7 @@ class MyDocument extends Document {
     return (
       <Html className='h-full'>
         <Head />
+        <meta name='description' content='' />
         <meta
           property='og:image'
           content='https://res.cloudinary.com/dtbtmmgxx/image/upload/v1639101147/large_dev_portfolio_dark_43823a7947.png'
