@@ -16,6 +16,15 @@ export default function Home({ Component, pageProps }) {
     <div>
       <Head id='home'>
         <title>Alex Maldonado | Web Developer</title>
+        <meta name='description' content='' />
+        <meta
+          property='og:image'
+          content='https://res.cloudinary.com/dtbtmmgxx/image/upload/v1639101147/large_dev_portfolio_dark_43823a7947.png'
+        />
+        <meta property='og:title' content='Alex Maldonado | Web Developer' />
+        <meta property='og:type' content='website' />
+
+        <meta property='og:url' content='https://www.AlexMaldonado.dev' />
         <link
           rel='apple-touch-icon'
           sizes='180x180'
