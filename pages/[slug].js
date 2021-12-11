@@ -14,7 +14,7 @@ export default function Post({ post }) {
   });
 
   return (
-    <section>
+    <section className=''>
       <div className='container mx-auto flex flex-col items-center justify-center mb-20 max-w-5xl p-10'>
         <div className='flex flex-row mr-auto gap-4 mb-3'>
           <Link href='/'>
@@ -64,7 +64,7 @@ export default function Post({ post }) {
             </a>
           </div>
         </header>
-        <article className=' w-full'>
+        <article className='w-full'>
           <ReactMarkdown
             components={CodeBlock}
             className='prose dark:prose-dark prose-blue md:prose-xl'
