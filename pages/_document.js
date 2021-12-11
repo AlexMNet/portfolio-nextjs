@@ -8,7 +8,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html className='h-full'>
+      <Html className='h-full scroll-smooth'>
         <Head />
         <meta name='description' content='' />
         <meta

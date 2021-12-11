@@ -2,7 +2,7 @@ const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   mode: '',
-  purge: [
+  content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
     './styles/**/*.css',
@@ -63,10 +63,10 @@ module.exports = {
       },
     },
   },
-  variants: {
-    animation: ['motion-safe'],
-    extend: { typography: ['dark'] },
-  },
+  // variants: {
+  //   animation: ['motion-safe'],
+  //   extend: { typography: ['dark'] },
+  // },
 
   plugins: [
     require('@tailwindcss/typography'),
