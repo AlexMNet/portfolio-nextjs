@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { socialMediaLinks } from '../utils/data/socialMediaLinks';
-import { BsMoonStars, BsMoon } from 'react-icons/bs';
 import { HiOutlineLightBulb, HiOutlineMoon } from 'react-icons/hi';
 
 export default function SocialMedia() {
