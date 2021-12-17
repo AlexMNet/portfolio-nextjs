@@ -22,7 +22,7 @@ export default function Navbar({ toggleDropdown, open }) {
   }, [open]);
 
   return (
-    <nav className='flex flex-col justify-center items-center h-16  text-black  shadow-sm font-mono sticky top-0 z-10 bg-white dark:bg-black dark:text-gray-300 backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200'>
+    <nav className='flex flex-col justify-center items-center h-16  text-black font-mono sticky top-0 z-10 bg-gray-100/70 dark:bg-black/70 dark:text-gray-300 backdrop-filter backdrop-blur-lg border-b border-gray-200 dark:border-gray-800'>
       <div className='container flex items-center justify-between h-full'>
         <Link href='/'>
           <a className='pl-8 hover:text-blue-500 text-lg tracking-widest font-semibold dark:text-gray-400'>
