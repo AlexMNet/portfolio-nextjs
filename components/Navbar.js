@@ -53,7 +53,9 @@ export default function Navbar({ toggleDropdown, open }) {
             <Link href={url} key={id}>
               <a
                 className={`p-4 hover:text-blue-500 ${
-                  router.asPath === url ? 'border-b-2 border-blue-500' : ''
+                  router.asPath === url
+                    ? 'border-b-2 border-blue-500 font-semibold '
+                    : ''
                 } `}
               >
                 {text}
