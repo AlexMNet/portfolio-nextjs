@@ -9,12 +9,12 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    opacity: {
-      99: '0.99',
-    },
     extend: {
       transitionProperty: {
         height: 'height',
+      },
+      opacity: {
+        99: '0.99',
       },
       typography(theme) {
         return {
