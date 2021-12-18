@@ -1,11 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import Moment from 'react-moment';
-import CodeBlock from '../components/utils/codeblock';
-import rehypeRaw from 'rehype-raw';
-import rehypeSlug from 'rehype-slug';
 import DOMPurify from 'isomorphic-dompurify';
+import MarkdownWrapper from '../components/utils/MarkdownWrapper';
 
 export default function Post({ post }) {
   //Protect against XSS attacks
@@ -65,13 +62,7 @@ export default function Post({ post }) {
           </div>
         </header>
         <article className='w-full'>
-          <ReactMarkdown
-            components={CodeBlock}
-            className='prose dark:prose-dark prose-blue md:prose-xl'
-            rehypePlugins={[rehypeRaw, rehypeSlug]}
-          >
-            {post.Content}
-          </ReactMarkdown>
+          <MarkdownWrapper>{post.Content}</MarkdownWrapper>
         </article>
       </div>
     </section>
