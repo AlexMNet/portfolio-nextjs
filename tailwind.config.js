@@ -18,6 +18,12 @@ module.exports = {
       },
       typography(theme) {
         return {
+          quoteless: {
+            css: {
+              'blockquote p:first-of-type::before': { content: 'none' },
+              'blockquote p:first-of-type::after': { content: 'none' },
+            },
+          },
           dark: {
             css: {
               color: theme('colors.gray.400'),
