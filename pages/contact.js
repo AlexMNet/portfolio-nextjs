@@ -117,7 +117,7 @@ export default function Contact() {
               size='compact'
             />
           </div>
-          <div className='relative mt-8'>
+          <div className='relative mt-10'>
             <input
               id='fullname'
               type='text'
@@ -141,7 +141,7 @@ export default function Contact() {
               </p>
             )}
           </div>
-          <div className='relative mt-8'>
+          <div className='relative mt-10'>
             <input
               type='email'
               id='email'
@@ -163,7 +163,7 @@ export default function Contact() {
               <p className='text-xs mt-1 text-red-500'>Must Provide Email</p>
             )}
           </div>
-          <div className='relative mt-8'>
+          <div className='relative mt-10'>
             <input
               type='text'
               id='subject'
@@ -184,7 +184,7 @@ export default function Contact() {
               <p className='text-xs mt-1 text-red-500'>Must Provide Subject</p>
             )}
           </div>
-          <div className='relative mt-8'>
+          <div className='relative mt-10'>
             <textarea
               name='message'
               id='message'
