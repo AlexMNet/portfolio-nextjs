@@ -117,75 +117,95 @@ export default function Contact() {
               size='compact'
             />
           </div>
-          <label
-            htmlFor='fullname'
-            className='text-gray-500 font-light mt-8 dark:text-gray-50 mr-auto'
-          >
-            Full name
-            {!fullname && <span className='text-red-500 text-xl'> *</span>}
-          </label>
-          <input
-            type='text'
-            name='fullname'
-            value={fullname}
-            onChange={(e) => setFullname(e.target.value)}
-            className='rounded-none  bg-transparent border-b  py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500'
-          />
-          {/* Error message name */}
-          {errors.fullname && (
-            <p className='text-xs mt-1 text-red-500'>Must Provide Full Name</p>
-          )}
-          <label
-            htmlFor='email'
-            className='text-gray-500 font-light mt-4 dark:text-gray-50 mr-auto'
-          >
-            E-mail{!email && <span className='text-red-500 text-xl'> *</span>}
-          </label>
-          <input
-            type='email'
-            name='email'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className='rounded-none bg-transparent border-b py-2 pl-4  focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500'
-          />
+          <div className='relative mt-8'>
+            <input
+              id='fullname'
+              type='text'
+              name='fullname'
+              value={fullname}
+              onChange={(e) => setFullname(e.target.value)}
+              className='peer text-lg h-10 placeholder-transparent w-full rounded-none  bg-transparent border-b  py-2 focus:outline-none text-gray-900'
+              placeholder='Full name'
+            />
+            <label
+              htmlFor='fullname'
+              className='absolute transition-all left-0 -top-3.5 text-left text-gray-600 text-sm dark:text-gray-50 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm'
+            >
+              Full name
+              {!fullname && <span className='text-red-500 text-xl'> *</span>}
+            </label>
+            {/* Error message name */}
+            {errors.fullname && (
+              <p className='text-xs mt-1 text-red-500'>
+                Must Provide Full Name
+              </p>
+            )}
+          </div>
+          <div className='relative mt-8'>
+            <input
+              type='email'
+              id='email'
+              name='email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className='peer text-lg h-10 placeholder-transparent w-full rounded-none  bg-transparent border-b  py-2  focus:outline-none text-gray-900'
+              placeholder='E-mail'
+            />
+            <label
+              htmlFor='email'
+              className='absolute transition-all left-0 -top-3.5 text-left text-gray-600 text-sm dark:text-gray-50 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm'
+            >
+              E-mail{!email && <span className='text-red-500 text-xl'> *</span>}
+            </label>
 
-          {/* Error message name */}
-          {errors.email && (
-            <p className='text-xs mt-1 text-red-500'>Must Provide Email</p>
-          )}
-          <label
-            htmlFor='subject'
-            className='text-gray-500 font-light mt-4 dark:text-gray-50 mr-auto'
-          >
-            Subject
-            {!subject && <span className='text-red-500 text-xl'> *</span>}
-          </label>
-          <input
-            type='text'
-            name='subject'
-            value={subject}
-            onChange={(e) => setSubject(e.target.value)}
-            className='rounded-none  bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500'
-          />
-          {errors.subject && (
-            <p className='text-xs mt-1 text-red-500'>Must Provide Subject</p>
-          )}
-          <label
-            htmlFor='message'
-            className='text-gray-500 font-light mt-4 dark:text-gray-50 mr-auto'
-          >
-            Message
-            {!message && <span className='text-red-500 text-xl'> *</span>}
-          </label>
-          <textarea
-            name='message'
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            className='rounded-none  bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500'
-          ></textarea>
-          {errors.message && (
-            <p className='text-xs mt-1 text-red-500'>Must Provide A Message</p>
-          )}
+            {/* Error message name */}
+            {errors.email && (
+              <p className='text-xs mt-1 text-red-500'>Must Provide Email</p>
+            )}
+          </div>
+          <div className='relative mt-8'>
+            <input
+              type='text'
+              id='subject'
+              name='subject'
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+              className='peer text-lg h-10 placeholder-transparent w-full rounded-none  bg-transparent border-b  py-2  focus:outline-none text-gray-900'
+              placeholder='subject'
+            />
+            <label
+              htmlFor='subject'
+              className='absolute transition-all left-0 -top-3.5 text-left text-gray-600 text-sm dark:text-gray-50 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm'
+            >
+              Subject
+              {!subject && <span className='text-red-500 text-xl'> *</span>}
+            </label>
+            {errors.subject && (
+              <p className='text-xs mt-1 text-red-500'>Must Provide Subject</p>
+            )}
+          </div>
+          <div className='relative mt-8'>
+            <textarea
+              name='message'
+              id='message'
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              className='peer text-lg h-10 placeholder-transparent w-full rounded-none  bg-transparent border-b  py-2  focus:outline-none  text-gray-900'
+              placeholder='message'
+            ></textarea>
+            <label
+              htmlFor='message'
+              className='absolute transition-all left-0 -top-3.5 text-left text-gray-600 text-sm dark:text-gray-50 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm'
+            >
+              Message
+              {!message && <span className='text-red-500 text-xl'> *</span>}
+            </label>
+            {errors.message && (
+              <p className='text-xs mt-1 text-red-500'>
+                Must Provide A Message
+              </p>
+            )}
+          </div>
 
           <div className='flex  justify-center items-center md:items-start  '>
             <button className=' px-10 mt-8 py-2 bg-blue-500 text-gray-50 font-light rounded-md text-lg flex flex-row items-center transition-all duration-150 ease-in-out hover:bg-blue-800 transform hover:-translate-y-1 hover:scale-110'>
