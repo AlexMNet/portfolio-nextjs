@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { MdOutlineMailOutline } from 'react-icons/md';
+import { ImSpinner2 } from 'react-icons/im';
 
 export default function Contact() {
   const [fullname, setFullname] = useState('');
@@ -124,12 +126,14 @@ export default function Contact() {
               name='fullname'
               value={fullname}
               onChange={(e) => setFullname(e.target.value)}
-              className='peer text-lg h-10 placeholder-transparent w-full rounded-none  bg-transparent border-b  py-2 focus:outline-none text-gray-900'
+              className={`peer text-lg h-10 placeholder-transparent w-full rounded-none  bg-transparent border-b ${
+                fullname ? 'focus:border-b-green-500' : 'focus:border-b-red-500'
+              }  py-2 focus:outline-none text-gray-900 dark:text-gray-200`}
               placeholder='Full name'
             />
             <label
               htmlFor='fullname'
-              className='absolute transition-all left-0 -top-3.5 text-left text-gray-600 text-sm dark:text-gray-50 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm'
+              className='absolute transition-all left-0 -top-3.5 text-left text-gray-600 text-sm dark:text-gray-50 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-gray-400 peer-focus:text-sm'
             >
               Full name
               {!fullname && <span className='text-red-500 text-xl'> *</span>}
@@ -148,12 +152,14 @@ export default function Contact() {
               name='email'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className='peer text-lg h-10 placeholder-transparent w-full rounded-none  bg-transparent border-b  py-2  focus:outline-none text-gray-900'
+              className={`peer text-lg h-10 placeholder-transparent w-full rounded-none  bg-transparent border-b ${
+                email ? 'focus:border-b-green-500' : 'focus:border-b-red-500'
+              }  py-2  focus:outline-none text-gray-900 dark:text-gray-200`}
               placeholder='E-mail'
             />
             <label
               htmlFor='email'
-              className='absolute transition-all left-0 -top-3.5 text-left text-gray-600 text-sm dark:text-gray-50 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm'
+              className='absolute transition-all left-0 -top-3.5 text-left text-gray-600 text-sm dark:text-gray-50 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-gray-400 peer-focus:text-sm'
             >
               E-mail{!email && <span className='text-red-500 text-xl'> *</span>}
             </label>
@@ -170,12 +176,14 @@ export default function Contact() {
               name='subject'
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
-              className='peer text-lg h-10 placeholder-transparent w-full rounded-none  bg-transparent border-b  py-2  focus:outline-none text-gray-900'
+              className={`peer text-lg h-10 placeholder-transparent w-full rounded-none  bg-transparent border-b ${
+                subject ? 'focus:border-b-green-500' : 'focus:border-b-red-500'
+              }  py-2  focus:outline-none text-gray-900 dark:text-gray-200`}
               placeholder='subject'
             />
             <label
               htmlFor='subject'
-              className='absolute transition-all left-0 -top-3.5 text-left text-gray-600 text-sm dark:text-gray-50 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm'
+              className='absolute transition-all left-0 -top-3.5 text-left text-gray-600 text-sm dark:text-gray-50 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-gray-400 peer-focus:text-sm'
             >
               Subject
               {!subject && <span className='text-red-500 text-xl'> *</span>}
@@ -190,12 +198,14 @@ export default function Contact() {
               id='message'
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className='peer text-lg h-10 placeholder-transparent w-full rounded-none  bg-transparent border-b  py-2  focus:outline-none  text-gray-900'
+              className={`peer text-lg h-10 placeholder-transparent w-full rounded-none  bg-transparent border-b ${
+                message ? 'focus:border-b-green-500' : 'focus:border-b-red-500'
+              } py-2  focus:outline-none  text-gray-900 dark:text-gray-200`}
               placeholder='message'
             ></textarea>
             <label
               htmlFor='message'
-              className='absolute transition-all left-0 -top-3.5 text-left text-gray-600 text-sm dark:text-gray-50 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm'
+              className='absolute transition-all left-0 -top-3.5 text-left text-gray-600 text-sm dark:text-gray-50 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-gray-400 peer-focus:text-sm'
             >
               Message
               {!message && <span className='text-red-500 text-xl'> *</span>}
@@ -210,30 +220,24 @@ export default function Contact() {
           <div className='flex  justify-center items-center md:items-start  '>
             <button className=' px-10 mt-8 py-2 bg-blue-500 text-gray-50 font-light rounded-md text-lg flex flex-row items-center transition-all duration-150 ease-in-out hover:bg-blue-800 transform hover:-translate-y-1 hover:scale-110'>
               {buttonText}
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-6 w-6 ml-2'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth='2'
-                  d='M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'
+              {buttonText === 'Send' ? (
+                <MdOutlineMailOutline size='1.5rem' className='ml-2' />
+              ) : (
+                <ImSpinner2
+                  size='1.5rem'
+                  className='animate-spinLoading ml-2'
                 />
-              </svg>
+              )}
             </button>
           </div>
           <div className='mt-5'>
             {showSuccessMessage && (
-              <p className='text-green-500 font-mono'>
+              <p className='text-green-500 font-mono bg-green-100 rounded-md inline-block px-3'>
                 Thank you! Message Sent!
               </p>
             )}
             {showfailureMessage && (
-              <p className='text-red-500 font-mono'>
+              <p className='text-red-500 font-mono bg-red-100 rounded-md inline-block px-3'>
                 Something went wrong. Try again!
               </p>
             )}
