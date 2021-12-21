@@ -60,6 +60,7 @@ module.exports = {
         fadeIn: 'fadeIn 2s ease-in forwards',
         spin: 'spin 500ms linear',
         spinFast: 'spin 150ms linear',
+        spinLoading: 'spin 700ms linear infinite',
       },
       keyframes: {
         fadeIn: {
