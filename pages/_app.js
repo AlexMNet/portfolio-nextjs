@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider attribute='class' defaultTheme='light' enableSystem={false}>
       <NextNProgress height={5} />
-      <motion.div
+      {/* <motion.div
         key={router.pathname}
         initial='initial'
         animate='animate'
@@ -25,11 +25,11 @@ function MyApp({ Component, pageProps }) {
           },
         }}
         exit={{ opacity: 0 }}
-      >
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </motion.div>
+      > */}
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+      {/* </motion.div> */}
     </ThemeProvider>
   );
 }
