@@ -5,11 +5,11 @@ Dev Portfolio is live here
 [AlexMaldonado.DEV](https://www.alexmaldonado.dev)
 
 Demo
-
-<!-- ![Desktop View](demo/desktop-portfolio.gif) -->
 <img src="demo/desktop-portfolio.gif" width="750">
 
+<div align="center">
 <img src="demo/mobile-portfolio.gif" width="400">
+</div>
 
 ## Tech Stack
 
