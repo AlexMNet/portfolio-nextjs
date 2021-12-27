@@ -1,8 +1,15 @@
 # AlexMaldonado.DEV
 
-Dev portfolio is live but currently under construction.
+Dev Portfolio is live here
 
 [AlexMaldonado.DEV](https://www.alexmaldonado.dev)
+
+Demo
+
+<!-- ![Desktop View](demo/desktop-portfolio.gif) -->
+<img src="demo/desktop-portfolio.gif" width="750">
+
+<img src="demo/mobile-portfolio.gif" width="400">
 
 ## Tech Stack
 
@@ -14,7 +21,8 @@ FrontEnd
 
 BackEnd
 
-- To be Determined
+- Strapi
+- MongoDB
 
 ### Contact
 
