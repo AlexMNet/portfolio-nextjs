@@ -4,8 +4,9 @@ Dev Portfolio is live here
 
 [AlexMaldonado.DEV](https://www.alexmaldonado.dev)
 
-Demo
+<div align="center">
 <img src="demo/desktop-portfolio.gif" width="750">
+</div>
 
 <div align="center">
 <img src="demo/mobile-portfolio.gif" width="400">
