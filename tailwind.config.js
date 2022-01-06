@@ -10,6 +10,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      backgroundImage: {
+        'cloud-bg': "url('/images/clouds.svg')",
+      },
       transitionProperty: {
         height: 'height',
       },
@@ -61,6 +64,7 @@ module.exports = {
         spin: 'spin 500ms linear',
         spinFast: 'spin 150ms linear',
         spinLoading: 'spin 700ms linear infinite',
+        bounceSlow: 'bounce 5s infinite',
       },
       keyframes: {
         fadeIn: {
