@@ -7,7 +7,7 @@ export default function SpotifyActive({ data }) {
 
     return (
         <div className="flex items-center justify-center mx-auto text-sm text-white dark:text-gray-500 bg-black  h-10">
-            <BsSpotify className="text-green-600 mr-1 text-base md:text-3xl animate-spinSpotify" />{' '}
+            <BsSpotify className="text-spotify-green mr-1 text-base md:text-3xl animate-spinSpotify" />{' '}
             <p className="text-xs md:text-base">
                 Currently Playing {data.title} by {data.artist}
             </p>
