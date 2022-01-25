@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import SocialMedia from './SocialMedia';
+import Spotify from './Spotify';
 
 export default function Layout({ children }) {
   const [open, setOpen] = useState(false);
@@ -30,6 +31,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Navbar toggleDropdown={toggleDropdown} open={open} />
+      <Spotify />
       <SocialMedia />
       <main className='flex-auto'>{children}</main>
       <Footer />
