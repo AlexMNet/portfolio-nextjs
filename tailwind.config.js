@@ -10,6 +10,9 @@ module.exports = {
     darkMode: 'class',
     theme: {
         extend: {
+            colors: {
+                'spotify-green': '#1DB954',
+            },
             backgroundImage: {
                 'cloud-bg': "url('/images/clouds.svg')",
             },
