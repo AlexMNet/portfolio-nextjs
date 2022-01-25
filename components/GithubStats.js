@@ -11,6 +11,7 @@ export default function GithubStats() {
     fetcher
   );
 
+
   //Error is not being caught if url is incorrect. error shows up in the data object.
   //So add data.errros to catch
   if (error || (data && data.errors))
