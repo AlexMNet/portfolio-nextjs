@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { BsSpotify } from 'react-icons/bs'
-import Ticker from 'react-ticker'
 import TextLoop from 'react-text-loop'
 
 export default function SpotifyActive({ data }) {
