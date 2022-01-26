@@ -6,7 +6,7 @@ import SpotifyInactive from './SpotifyInactive'
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 export default function Spotify() {
-    const { data, error } = useSWR('/api/spotify', fetcher)
+    const { data, error } = useSWR('/api/currentlyPlaying', fetcher)
     if (error) return <></>
     if (!data)
         return (
