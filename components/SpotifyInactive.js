@@ -20,16 +20,18 @@ export default function SpotifyInactive() {
     return (
         <div className="flex items-center justify-center mx-auto text-sm text-white dark:text-gray-500 bg-black  h-10">
             <BsSpotify className="text-spotify-green mr-1 text-base md:text-3xl" />{' '}
-            <p className="text-xs md:text-base">
-                Last Played {data.title.substring(0, 2)} by
-                <TextLoop className="ml-1 justify-center items-center">
-                    {data.artists.map((artist, idx) => (
-                        <span key={idx} className="">
-                            {artist.name}
-                        </span>
-                    ))}
-                </TextLoop>
-            </p>
+            <a href={data.trackLink} className="hover:text-spotify-green">
+                <p className="text-xs md:text-base">
+                    Last Played {data.title.substring(0, 2)} by
+                    <TextLoop className="ml-1 justify-center items-center">
+                        {data.artists.map((artist, idx) => (
+                            <span key={idx} className="">
+                                {artist.name}
+                            </span>
+                        ))}
+                    </TextLoop>
+                </p>
+            </a>
         </div>
     )
 }
