@@ -36,5 +36,3 @@ export default function SpotifyInactive() {
         </div>
     )
 }
-
-// str.split('-')[0].replace(/\([^()]*\)/g, '')
