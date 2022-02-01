@@ -1,6 +1,7 @@
 import { BsSpotify } from 'react-icons/bs'
 import useSWR from 'swr'
 import TextLoop from 'react-text-loop'
+import { formatSongTitle } from '../functions/functions'
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
@@ -22,7 +23,7 @@ export default function SpotifyInactive() {
             <BsSpotify className="text-spotify-green mr-1 text-base md:text-3xl" />{' '}
             <a href={data.trackLink} className="hover:text-spotify-green">
                 <p className="text-xs md:text-base">
-                    Last Played {data.title.substring(0, 2)} by
+                    Last Played {formatSongTitle(data.title)} by
                     <TextLoop className="ml-1 justify-center items-center">
                         {data.artists.map((artist, idx) => (
                             <span key={idx} className="">
@@ -35,3 +36,5 @@ export default function SpotifyInactive() {
         </div>
     )
 }
+
+// str.split('-')[0].replace(/\([^()]*\)/g, '')
