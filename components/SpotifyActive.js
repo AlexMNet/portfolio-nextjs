@@ -10,7 +10,7 @@ export default function SpotifyActive({ data }) {
         <div className="flex items-center justify-center mx-auto text-sm text-white dark:text-gray-500 bg-black p-2">
             <BsSpotify className="text-spotify-green mr-1 text-base md:text-3xl animate-spinSpotify" />{' '}
             <a href={data.songUrl} className="hover:text-spotify-green">
-                <p className="text-xs md:text-base">
+                <span className="text-xs md:text-base">
                     {formatSongTitle(data.title)} by
                     <TextLoop className="ml-1 justify-center items-center">
                         {data.artists.map((artist, idx) => (
@@ -19,7 +19,7 @@ export default function SpotifyActive({ data }) {
                             </span>
                         ))}
                     </TextLoop>
-                </p>{' '}
+                </span>{' '}
             </a>
         </div>
     )
