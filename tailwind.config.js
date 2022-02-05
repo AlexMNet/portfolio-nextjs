@@ -79,11 +79,21 @@ module.exports = {
                 spinLoading: 'spin 700ms linear infinite',
                 spinSpotify: 'spin 2s linear infinite',
                 bounceSlow: 'bounce 5s infinite',
+                spotifyBars1: 'bars 1s ease-in-out infinite',
+                spotifyBars2: 'bars 800ms ease-in-out infinite',
+                spotifyBars3: 'bars 850ms ease-in-out infinite',
+                spotifyBars4: 'bars 900ms ease-in-out infinite',
+                spotifyBars5: 'bars 950ms ease-in-out infinite',
+                spotifyBars6: 'bars 975ms ease-in-out infinite',
             },
             keyframes: {
                 fadeIn: {
                     '0%': { opacity: 0 },
                     '100%': { opacity: 1 },
+                },
+                bars: {
+                    '0%, 100%': { opacity: 1, height: '1.5rem' },
+                    '50%': { opacity: 0.35, height: '0.75rem' },
                 },
             },
         },
@@ -94,6 +104,7 @@ module.exports = {
     // },
 
     plugins: [
+        require('tailwindcss-animation-delay'),
         require('@tailwindcss/typography'),
         //Enable frost nav for firefox
         plugin(function ({ addVariant, e, postcss }) {
