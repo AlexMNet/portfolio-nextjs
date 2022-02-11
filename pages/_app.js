@@ -1,15 +1,15 @@
-import 'tailwindcss/tailwind.css';
-import '../styles/global.css';
-import { ThemeProvider } from 'next-themes';
-import NextNProgress from 'nextjs-progressbar';
-import Layout from '../components/Layout';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useRouter } from 'next/router';
+import 'tailwindcss/tailwind.css'
+import '../styles/global.css'
+import { ThemeProvider } from 'next-themes'
+import NextNProgress from 'nextjs-progressbar'
+import Layout from '../components/Layout'
+// import { AnimatePresence, motion } from 'framer-motion';
+import { useRouter } from 'next/router'
 
 function MyApp({ Component, pageProps }) {
-  const router = useRouter();
+  const router = useRouter()
   return (
-    <ThemeProvider attribute='class' defaultTheme='light' enableSystem={false}>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
       <NextNProgress height={5} />
       {/* <motion.div
         key={router.pathname}
@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }) {
       </Layout>
       {/* </motion.div> */}
     </ThemeProvider>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp
