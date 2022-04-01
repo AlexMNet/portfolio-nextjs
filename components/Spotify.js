@@ -21,5 +21,5 @@ export default function Spotify({ setIsPlaying }) {
     return <SpotifyActive data={data} setIsPlaying={setIsPlaying} />
   }
 
-  return <SpotifyInactive />
+  return <SpotifyInactive setIsPlaying={setIsPlaying} />
 }
