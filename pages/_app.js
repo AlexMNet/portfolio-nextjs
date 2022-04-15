@@ -5,6 +5,7 @@ import NextNProgress from 'nextjs-progressbar'
 import Layout from '../components/Layout'
 // import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/router'
+import Script from 'next/script'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
@@ -30,6 +31,17 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </Layout>
       {/* </motion.div> */}
+      <Script
+        strategy="lazyOnload"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+      />
+      <Script strategy="lazyOnload">
+        {`window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});`}
+      </Script>
     </ThemeProvider>
   )
 }
