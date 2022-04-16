@@ -1,14 +1,29 @@
 import 'tailwindcss/tailwind.css'
 import '../styles/global.css'
+import React, { useEffect } from 'react'
 import { ThemeProvider } from 'next-themes'
 import NextNProgress from 'nextjs-progressbar'
 import Layout from '../components/Layout'
 // import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/router'
-import Script from 'next/script'
+import * as ga from '../lib/ga'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      ga.pageview(url)
+    }
+    //When the component is mounted, subscribe to router changes
+    //and log those page views
+    router.events.on('routeChangeComplete', handleRouteChange)
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
   return (
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
       <NextNProgress height={5} />
@@ -31,17 +46,6 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </Layout>
       {/* </motion.div> */}
-      <Script
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-      />
-      <Script strategy="lazyOnload">
-        {`window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});`}
-      </Script>
     </ThemeProvider>
   )
 }
