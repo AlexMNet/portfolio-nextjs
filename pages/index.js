@@ -15,13 +15,16 @@ export default function Home({ Component, pageProps }) {
   return (
     <div>
       <Head id="home">
-        <title>Alex Maldonado | Web Developer</title>
+        <title>Alex Maldonado | Software Developer</title>
         <meta
           name="description"
           content="Personal Web Developer Portfolio. See my projects!"
         />
         <meta property="og:image" content="/images/ogImage.jpeg" />
-        <meta property="og:title" content="Alex Maldonado | Web Developer" />
+        <meta
+          property="og:title"
+          content="Alex Maldonado | Software Developer"
+        />
         <meta property="og:type" content="website" />
 
         <meta property="og:url" content="https://www.AlexMaldonado.dev" />
