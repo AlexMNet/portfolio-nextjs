@@ -14,7 +14,7 @@ export default function TextTransition({ text, length }) {
     <ReactTextTransition
       inline
       springConfig={presets.stiff}
-      text={text.map((a) => a.name)[index % length]}
+      text={text.map((a) => a.name.slice(0, 15))[index % length]}
     />
   )
 }
