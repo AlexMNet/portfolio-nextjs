@@ -99,15 +99,14 @@ export default function About() {
 
             <br />
             <p className="text-gray-600 leading-8">
-              I have recently become a collaborator on the new{' '}
+              I now work fulltime as a software developer for Sandals Church and
+              I am the Director of Program Management for the{' '}
               <a className="text-blue-500" href="https://reskillamericans.org/">
-                Reskill Americans
-              </a>{' '}
-              website in which I have contributed to many of the issues and
-              content updates. My goal is not only to join a software
-              development team and continue learning and honing in on my skills
-              as a developer, but also to put myself in a position to guide and
-              mentor others that are just beginning their journey.
+                Reskill Americans Bootcamp
+              </a>
+              . My goal is not only to continue learning and honing in on my
+              skills as a developer, but also guide and mentor others that are
+              just beginning their journey.
             </p>
           </div>
           <div className="flex flex-col justify-items-center items-center gap-5">
