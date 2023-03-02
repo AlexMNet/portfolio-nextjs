@@ -22,9 +22,10 @@ export default function Hero() {
           <hr className="border-0 bg-blue-500 text-blue-500 h-px max-w-md" />
 
           <p className="text-lg font-normal leading-relaxed mt-6 md:mb-4 text-gray-500 max-w-xl">
-            I am a software developer for Sandals Church utilizing technology
-            such as React, NextJS, PHP, Wordpress and more. I am also the
-            Director of Program Management for the Reskill Americans Bootcamp.
+            I am a software developer at Sandals Church utilizing technologies
+            such as React, NextJS, PHP, and Wordpress to deliver exceptional
+            user experiences. My passion for crafting responsive and
+            user-friendly applications drives my work every day.
           </p>
           <Link href="#projects">
             <button
