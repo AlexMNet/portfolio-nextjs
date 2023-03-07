@@ -25,14 +25,4 @@ export const showcasedProjects = [
     liveLink: 'https://plate-weight-8d3ba.web.app/',
     githubLink: 'https://github.com/AlexMNet/plate-weight-pwa',
   },
-  {
-    id: 3,
-    img: '/images/hot-sauce-app.png',
-    docLink: '/',
-    title: 'Hot Sauce Collection',
-    desc: 'A full stack web app to keep track of my Hot Sauce Collection!',
-    tech: ['ExpressJS', 'EJS', 'MongoDB'],
-    liveLink: 'https://hotsaucecollection.herokuapp.com/sauces',
-    githubLink: 'https://github.com/AlexMNet/hotSauceApp',
-  },
 ]
