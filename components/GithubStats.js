@@ -64,7 +64,7 @@ export default function GithubStats() {
 
   return (
     <section className="bg-white dark:bg-neutral-900">
-      <div className="container flex flex-col mx-auto text-center justify-center items-center px-10 pt-10 pb-20 md:pb-32 ">
+      <div className="container flex flex-col mx-auto text-center justify-center items-center px-10 pt-10 pb-20 md:pb-32">
         <div className="flex flex-col items-center">
           <h1 className="text-5xl md:text-6xl font-normal leading-normal mb-10 text-gray-700 dark:text-gray-400">
             Latest GitHub Repos
@@ -84,7 +84,7 @@ export default function GithubStats() {
             data.items
               .splice(0, 6)
               .map(({ id, name, description, html_url }) => (
-                <div key={id} className="mb-10 max-w-sm">
+                <div key={id} className="mb-10 max-w-xs">
                   <h1 className="text-xl mb-2">{name}</h1>
                   <p className="text-sm text-gray-500 mb-2">
                     {description ? description : 'No description'}
