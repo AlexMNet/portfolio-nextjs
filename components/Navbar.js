@@ -22,9 +22,9 @@ export default function Navbar({ toggleDropdown, open, isPlaying }) {
   }, [open])
 
   return (
-    <nav className="flex flex-col justify-center items-center h-16  text-black font-mono sticky top-0 z-10 bg-gray-100/70 dark:bg-black/70 dark:text-gray-300 backdrop-filter backdrop-blur-lg border-b border-gray-200 dark:border-gray-800">
+    <nav className="flex flex-col justify-center items-center h-16  text-black font-mono sticky top-0 z-10 bg-white dark:bg-neutral-900 dark:text-gray-300 backdrop-filter backdrop-blur-lg border-b border-gray-200 dark:border-gray-800">
       <div className="container flex items-center justify-between h-full">
-        <Link href="/">
+        <Link legacyBehavior href="/">
           <a className="pl-8 hover:text-blue-500 text-lg tracking-widest font-semibold dark:text-gray-400">
             AlexMaldonado.DEV
             {isPlaying ? (
@@ -52,9 +52,14 @@ export default function Navbar({ toggleDropdown, open, isPlaying }) {
             />
           )}
         </div>
+
+        {/* THERE IS A PROBLEM HERE!!!!!!! */}
+        {/* THERE IS A PROBLEM HERE!!!!!!! */}
+        {/* THERE IS A PROBLEM HERE!!!!!!! */}
+        {/* THERE IS A PROBLEM HERE!!!!!!! */}
         <div className="pr-8 md:block hidden">
           {navLinks.map(({ id, url, text }) => (
-            <Link href={url} key={id}>
+            <Link legacyBehavior href={url} key={id}>
               <a
                 className={`p-4 hover:text-blue-500 ${
                   router.asPath === url
@@ -77,7 +82,7 @@ export default function Navbar({ toggleDropdown, open, isPlaying }) {
         {open && (
           <ul className={`flex flex-col`} ref={linksRef}>
             {navLinks.map(({ id, url, text }) => (
-              <Link href={url} key={id}>
+              <Link legacyBehavior href={url} key={id}>
                 <a
                   onClick={toggleDropdown}
                   className="p-4 hover:text-blue-200 dark:text-gray-400"

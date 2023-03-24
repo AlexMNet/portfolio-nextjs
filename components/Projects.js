@@ -1,68 +1,78 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import React from 'react'
-import ScrollAnimation from 'react-animate-on-scroll'
 import { showcasedProjects } from '../utils/data/showcasedProjects'
 
 export default function Projects() {
   return (
-    <section
-      className=" bg-gray-200 dark:bg-gray-900 py-20 px-10"
-      id="projects"
-    >
-      <div className="container mx-auto">
-        <h1 className="text-6xl  dark:text-gray-400 font-medium leading-normal mt-0 mb-2 text-center">
-          Projects
-        </h1>
-        <hr className="border-0 bg-blue-500 text-blue-500 h-px max-w-md mx-auto" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-10 xl-grid-cols-4 gap-y-10 gap-x-6 mt-5">
-          {/* Cards */}
-          {showcasedProjects.map(
-            ({ id, img, docLink, title, desc, tech, liveLink, githubLink }) => (
-              <ScrollAnimation
-                key={id}
-                animateIn="fadeInUp"
-                animateOut="fadeOutUp"
-                animateOnce={true}
-              >
-                <div className="overflow-hidden container mx-auto shadow-lg rounded-lg max-w-md hover:shadow-2xl transition duration-300 bg-white">
-                  <Link href={docLink}>
-                    <img src={img} alt="" className=" w-full" />
-                  </Link>
-                  <div className="p-6 border-t-2 border-blue-500 dark:bg-black overflow-hidden">
-                    <h1 className="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 dark:text-gray-400">
-                      {title}
-                    </h1>
-                    <p className="text-gray-700 my-2 hover-text-900 ">{desc}</p>
-                    {tech.map((title, idx) => (
-                      <span
-                        key={idx}
-                        className="text-xs font-semibold inline-block py-1 px-2 rounded text-white bg-blue-500 dark:bg-gray-700 uppercase last:mr-0 mr-1"
-                      >
-                        {title}
-                      </span>
-                    ))}
-                    {/* Github and project links */}
-                    <div className="mt-3 flex justify-start">
-                      <Link href={liveLink}>
-                        <a
-                          className="text-blue-500 underline mr-5"
-                          target="_blank"
-                        >
-                          Live
-                        </a>
-                      </Link>
-                      <Link href={githubLink}>
-                        <a className="text-blue-500 underline" target="_blank">
-                          Github
-                        </a>
-                      </Link>
-                    </div>
-                  </div>
+    <section className="max-w-screen-lg flex flex-col bg-white dark:bg-neutral-900 mx-auto items-center px-3 md:p-0">
+      <h1
+        id="projects"
+        className="text-6xl text-blue-500 font-medium leading-normal mt-0 mb-1 text-center"
+      >
+        Projects
+      </h1>
+      <div className="h-px w-24 bg-yellow-400"></div>
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+        {showcasedProjects.map(
+          ({
+            id,
+            img,
+            title,
+            desc,
+            tech,
+            liveLink,
+            githubLink,
+            notification,
+          }) => (
+            <div
+              key={id}
+              className="border-2 backdrop-blur-lg border-slate-800 relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-lg"
+            >
+              <div className="mx-4 mt-4 overflow-hidden rounded-xl">
+                <img
+                  className="aspect-video object-top object-cover"
+                  src={img}
+                  alt="ui/ux review check"
+                />
+              </div>
+              <div className="p-6">
+                <div className="mb-3 flex items-center justify-between">
+                  <h5 className="block font-sans text-xl font-medium leading-snug tracking-normal text-blue-500 antialiased">
+                    {title}
+                  </h5>
                 </div>
-              </ScrollAnimation>
-            )
-          )}
-        </div>
+                <p className="block font-sans text-base font-light leading-relaxed text-gray-800 dark:text-gray-300 antialiased h-24">
+                  {desc}
+                </p>
+                <div className="group mt-8 inline-flex flex-wrap items-center gap-3 text-slate-600 dark:text-slate-300">
+                  {tech.map((tech) => (
+                    <span key={tech}>{tech}</span>
+                  ))}
+                </div>
+              </div>
+              <div className="p-6 pt-3 flex gap-3">
+                {liveLink && (
+                  <button
+                    className="middle none center rounded-lg bg-blue-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                    data-ripple-light="true"
+                  >
+                    Live
+                  </button>
+                )}
+                {githubLink && (
+                  <button
+                    className="middle none center rounded-lg bg-blue-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                    data-ripple-light="false"
+                  >
+                    Github
+                  </button>
+                )}
+                {notification && <p className="text-red-900">{notification}</p>}
+              </div>
+            </div>
+          )
+        )}
       </div>
     </section>
   )
