@@ -15,14 +15,14 @@ export default function SpotifyInactive({ setIsPlaying }) {
 
   if (!data)
     return (
-      <div className="flex items-center justify-center mx-auto text-sm text-white dark:text-gray-500 bg-black  h-10">
+      <div className="flex items-center justify-center mx-auto text-sm text-white dark:text-gray-500 bg-white dark:bg-neutral-900  h-10">
         <BsSpotify className="text-spotify-green mr-1 text-base md:text-3xl animate-spinSpotify" />{' '}
         <p className="text-xs md:text-base">Loading Spotify Data</p>
       </div>
     )
 
   return (
-    <div className="flex items-center justify-center mx-auto text-sm text-white dark:text-gray-500 bg-black  h-10">
+    <div className="flex items-center justify-center mx-auto text-sm text-slate-800 dark:text-gray-500 bg-white dark:bg-neutral-900  h-10">
       <BsSpotify className="text-spotify-green mr-1 text-base md:text-3xl" />{' '}
       <a href={data.trackLink} className="hover:text-spotify-green">
         <span className="text-xs md:text-base">

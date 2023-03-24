@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { ReactPhotoCollage } from 'react-photo-collage'
+// import { ReactPhotoCollage } from 'react-photo-collage'
 import Link from 'next/link'
 import Image from 'next/image'
 import { RoughNotation } from 'react-rough-notation'
@@ -36,11 +36,11 @@ export default function About() {
       <div className="container mx-auto mb-20 items-center flex flex-col lg:flex-row text-center md:mt-32">
         <div className="flex-1 py-10 px-10">
           <div className="w-full mx-auto justify-center items-center container flex flex-col overflow-hidden">
-            <ReactPhotoCollage
+            {/* <ReactPhotoCollage
               {...galleryImages}
               width={width <= 610 ? `325px` : `600px`}
               height={width <= 610 ? ['150px', '100px'] : ['250px', '170px']}
-            />
+            /> */}
           </div>
         </div>
         <div className=" px-10 max-w-2xl text-center mx-auto flex-grow">
@@ -110,12 +110,12 @@ export default function About() {
             </p>
           </div>
           <div className="flex flex-col justify-items-center items-center gap-5">
-            <Link href="/#projects">
+            <Link legacyBehavior href="/#projects">
               <a className=" bg-blue-500 text-white active:bg-pink-600 font-bold uppercase text-base px-6 py-3 rounded shadow-md outline-none transition duration-500 ease-in-out hover:bg-blue-800 transform hover:-translate-y-1 hover:scale-110">
                 Checkout my work
               </a>
             </Link>
-            <Link href="/">
+            <Link legacyBehavior href="/">
               <a className="text-blue-500 underline hover:text-blue-700">
                 Back home
               </a>

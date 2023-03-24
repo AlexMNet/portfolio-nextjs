@@ -1,62 +1,62 @@
-import React, { useState } from 'react';
-import Link from 'next/link';
-import ReCAPTCHA from 'react-google-recaptcha';
-import { MdOutlineMailOutline } from 'react-icons/md';
-import { ImSpinner2 } from 'react-icons/im';
+import React, { useState } from 'react'
+import Link from 'next/link'
+import ReCAPTCHA from 'react-google-recaptcha'
+import { MdOutlineMailOutline } from 'react-icons/md'
+import { ImSpinner2 } from 'react-icons/im'
 
 export default function Contact() {
-  const [fullname, setFullname] = useState('');
-  const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('');
-  const [message, setMessage] = useState('');
+  const [fullname, setFullname] = useState('')
+  const [email, setEmail] = useState('')
+  const [subject, setSubject] = useState('')
+  const [message, setMessage] = useState('')
 
   const onChange = (value) => {
-    console.log('Captcha value:', value);
-  };
+    console.log('Captcha value:', value)
+  }
 
   //Form validation State
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({})
 
   //Setting button text on form submission
-  const [buttonText, setButtonText] = useState('Send');
+  const [buttonText, setButtonText] = useState('Send')
 
   //Setting success of failure message states
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [showfailureMessage, setShowfailureMessage] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false)
+  const [showfailureMessage, setShowfailureMessage] = useState(false)
 
   const handleValidation = () => {
-    let tempErrors = {};
-    let isValid = true;
+    let tempErrors = {}
+    let isValid = true
 
     if (fullname.length <= 0) {
-      tempErrors['fullname'] = true;
-      isValid = false;
+      tempErrors['fullname'] = true
+      isValid = false
     }
     if (email.length <= 0) {
-      tempErrors['email'] = true;
-      isValid = false;
+      tempErrors['email'] = true
+      isValid = false
     }
     if (subject.length <= 0) {
-      tempErrors['subject'] = true;
-      isValid = false;
+      tempErrors['subject'] = true
+      isValid = false
     }
     if (message.length <= 0) {
-      tempErrors['message'] = true;
-      isValid = false;
+      tempErrors['message'] = true
+      isValid = false
     }
-    setErrors({ ...tempErrors });
-    console.log('errors', errors);
-    return isValid;
-  };
+    setErrors({ ...tempErrors })
+    console.log('errors', errors)
+    return isValid
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     //form validation
-    let isValidForm = handleValidation();
+    let isValidForm = handleValidation()
 
     if (isValidForm) {
-      setButtonText('sending');
+      setButtonText('sending')
 
       const res = await fetch('/api/sendgrid', {
         body: JSON.stringify({
@@ -69,184 +69,184 @@ export default function Contact() {
           'Content-Type': 'application/json',
         },
         method: 'POST',
-      });
-      const { error } = await res.json();
+      })
+      const { error } = await res.json()
       if (error) {
-        console.log(error);
-        setShowSuccessMessage(false);
-        setShowfailureMessage(true);
-        setButtonText('Send');
-        return;
+        console.log(error)
+        setShowSuccessMessage(false)
+        setShowfailureMessage(true)
+        setButtonText('Send')
+        return
       }
-      setShowSuccessMessage(true);
-      setShowfailureMessage(false);
-      setButtonText('Send');
+      setShowSuccessMessage(true)
+      setShowfailureMessage(false)
+      setButtonText('Send')
       setTimeout(function () {
-        setShowSuccessMessage(false);
-      }, 3000);
+        setShowSuccessMessage(false)
+      }, 3000)
       // Reset input state
-      setFullname('');
-      setEmail('');
-      setMessage('');
-      setSubject('');
-      console.log(fullname, email, subject, message);
+      setFullname('')
+      setEmail('')
+      setMessage('')
+      setSubject('')
+      console.log(fullname, email, subject, message)
     }
-  };
+  }
 
   return (
-    <div className='container mx-auto text-center'>
+    <div className="container mx-auto text-center">
       {/* Header */}
-      <div className='text-gray-800 dark:text-gray-300 max-w-lg mx-auto px-5'>
-        <h1 className='text-6xl'>Contact</h1>
-        <p className='text-gray-400'>
+      <div className="text-gray-800 dark:text-gray-300 max-w-lg mx-auto px-5">
+        <h1 className="text-6xl">Contact</h1>
+        <p className="text-gray-400">
           Lets talk about my projects! Send me a message and I will respond as
           soon as I can.
         </p>
       </div>
       {/* FORM */}
-      <div className='p-10 mb-10'>
+      <div className="p-10 mb-10">
         <form
           onSubmit={handleSubmit}
-          className='rounded-lg shadow-xl flex flex-col px-8 py-8 max-w-xl mx-auto bg-white dark:bg-gray-800'
+          className="rounded-lg shadow-xl flex flex-col px-8 py-8 max-w-xl mx-auto bg-white dark:bg-gray-800"
         >
-          <h1 className='text-2xl font-bold dark:text-gray-50'>
+          <h1 className="text-2xl font-bold dark:text-gray-50">
             Send a message
           </h1>
-          <div className='mx-auto mt-5'>
+          <div className="mx-auto mt-5">
             <ReCAPTCHA
               sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
               onChange={onChange}
-              size='compact'
+              size="compact"
             />
           </div>
-          <div className='relative mt-10'>
+          <div className="relative mt-10">
             <input
-              id='fullname'
-              type='text'
-              name='fullname'
+              id="fullname"
+              type="text"
+              name="fullname"
               value={fullname}
               onChange={(e) => setFullname(e.target.value)}
               className={`peer text-lg h-10 placeholder-transparent w-full rounded-none  bg-transparent border-b ${
                 fullname ? 'focus:border-b-green-500' : 'focus:border-b-red-500'
               }  py-2 focus:outline-none text-gray-900 dark:text-gray-200`}
-              placeholder='Full name'
+              placeholder="Full name"
             />
             <label
-              htmlFor='fullname'
-              className='absolute transition-all left-0 -top-3.5 text-left text-gray-600 text-sm dark:text-gray-50 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-gray-400 peer-focus:text-sm'
+              htmlFor="fullname"
+              className="absolute transition-all left-0 -top-3.5 text-left text-gray-600 text-sm dark:text-gray-50 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-gray-400 peer-focus:text-sm"
             >
               Full name
-              {!fullname && <span className='text-red-500 text-xl'> *</span>}
+              {!fullname && <span className="text-red-500 text-xl"> *</span>}
             </label>
             {/* Error message name */}
             {errors.fullname && (
-              <p className='text-xs mt-1 text-red-500'>
+              <p className="text-xs mt-1 text-red-500">
                 Must Provide Full Name
               </p>
             )}
           </div>
-          <div className='relative mt-10'>
+          <div className="relative mt-10">
             <input
-              type='email'
-              id='email'
-              name='email'
+              type="email"
+              id="email"
+              name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className={`peer text-lg h-10 placeholder-transparent w-full rounded-none  bg-transparent border-b ${
                 email ? 'focus:border-b-green-500' : 'focus:border-b-red-500'
               }  py-2  focus:outline-none text-gray-900 dark:text-gray-200`}
-              placeholder='E-mail'
+              placeholder="E-mail"
             />
             <label
-              htmlFor='email'
-              className='absolute transition-all left-0 -top-3.5 text-left text-gray-600 text-sm dark:text-gray-50 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-gray-400 peer-focus:text-sm'
+              htmlFor="email"
+              className="absolute transition-all left-0 -top-3.5 text-left text-gray-600 text-sm dark:text-gray-50 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-gray-400 peer-focus:text-sm"
             >
-              E-mail{!email && <span className='text-red-500 text-xl'> *</span>}
+              E-mail{!email && <span className="text-red-500 text-xl"> *</span>}
             </label>
 
             {/* Error message name */}
             {errors.email && (
-              <p className='text-xs mt-1 text-red-500'>Must Provide Email</p>
+              <p className="text-xs mt-1 text-red-500">Must Provide Email</p>
             )}
           </div>
-          <div className='relative mt-10'>
+          <div className="relative mt-10">
             <input
-              type='text'
-              id='subject'
-              name='subject'
+              type="text"
+              id="subject"
+              name="subject"
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
               className={`peer text-lg h-10 placeholder-transparent w-full rounded-none  bg-transparent border-b ${
                 subject ? 'focus:border-b-green-500' : 'focus:border-b-red-500'
               }  py-2  focus:outline-none text-gray-900 dark:text-gray-200`}
-              placeholder='subject'
+              placeholder="subject"
             />
             <label
-              htmlFor='subject'
-              className='absolute transition-all left-0 -top-3.5 text-left text-gray-600 text-sm dark:text-gray-50 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-gray-400 peer-focus:text-sm'
+              htmlFor="subject"
+              className="absolute transition-all left-0 -top-3.5 text-left text-gray-600 text-sm dark:text-gray-50 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-gray-400 peer-focus:text-sm"
             >
               Subject
-              {!subject && <span className='text-red-500 text-xl'> *</span>}
+              {!subject && <span className="text-red-500 text-xl"> *</span>}
             </label>
             {errors.subject && (
-              <p className='text-xs mt-1 text-red-500'>Must Provide Subject</p>
+              <p className="text-xs mt-1 text-red-500">Must Provide Subject</p>
             )}
           </div>
-          <div className='relative mt-10'>
+          <div className="relative mt-10">
             <textarea
-              name='message'
-              id='message'
+              name="message"
+              id="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               className={`peer text-lg h-10 placeholder-transparent w-full rounded-none  bg-transparent border-b ${
                 message ? 'focus:border-b-green-500' : 'focus:border-b-red-500'
               } py-2  focus:outline-none  text-gray-900 dark:text-gray-200`}
-              placeholder='message'
+              placeholder="message"
             ></textarea>
             <label
-              htmlFor='message'
-              className='absolute transition-all left-0 -top-3.5 text-left text-gray-600 text-sm dark:text-gray-50 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-gray-400 peer-focus:text-sm'
+              htmlFor="message"
+              className="absolute transition-all left-0 -top-3.5 text-left text-gray-600 text-sm dark:text-gray-50 peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-gray-400 peer-focus:text-sm"
             >
               Message
-              {!message && <span className='text-red-500 text-xl'> *</span>}
+              {!message && <span className="text-red-500 text-xl"> *</span>}
             </label>
             {errors.message && (
-              <p className='text-xs mt-1 text-red-500'>
+              <p className="text-xs mt-1 text-red-500">
                 Must Provide A Message
               </p>
             )}
           </div>
 
-          <div className='flex  justify-center items-center md:items-start  '>
-            <button className=' px-10 mt-8 py-2 bg-blue-500 text-gray-50 font-light rounded-md text-lg flex flex-row items-center transition-all duration-150 ease-in-out hover:bg-blue-800 transform hover:-translate-y-1 hover:scale-110'>
+          <div className="flex  justify-center items-center md:items-start  ">
+            <button className=" px-10 mt-8 py-2 bg-blue-500 text-gray-50 font-light rounded-md text-lg flex flex-row items-center transition-all duration-150 ease-in-out hover:bg-blue-800 transform hover:-translate-y-1 hover:scale-110">
               {buttonText}
               {buttonText === 'Send' ? (
-                <MdOutlineMailOutline size='1.5rem' className='ml-2' />
+                <MdOutlineMailOutline size="1.5rem" className="ml-2" />
               ) : (
                 <ImSpinner2
-                  size='1.5rem'
-                  className='animate-spinLoading ml-2'
+                  size="1.5rem"
+                  className="animate-spinLoading ml-2"
                 />
               )}
             </button>
           </div>
-          <div className='mt-5'>
+          <div className="mt-5">
             {showSuccessMessage && (
-              <p className='text-green-500 font-mono bg-green-100 rounded-md inline-block px-3'>
+              <p className="text-green-500 font-mono bg-green-100 rounded-md inline-block px-3">
                 Thank you! Message Sent!
               </p>
             )}
             {showfailureMessage && (
-              <p className='text-red-500 font-mono bg-red-100 rounded-md inline-block px-3'>
+              <p className="text-red-500 font-mono bg-red-100 rounded-md inline-block px-3">
                 Something went wrong. Try again!
               </p>
             )}
           </div>
         </form>
       </div>
-      <Link href='/'>
-        <a className='text-blue-500 underline hover:text-blue-700'>Back home</a>
+      <Link legacyBehavior href="/">
+        <a className="text-blue-500 underline hover:text-blue-700">Back home</a>
       </Link>
     </div>
-  );
+  )
 }

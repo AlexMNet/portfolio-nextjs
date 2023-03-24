@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* html {
+html {
   scroll-padding-top: 4rem;
-} */
+  overflow-x: hidden;
+}

@@ -37,7 +37,7 @@ export default function Layout({ children }) {
         isPlaying={isPlaying}
       />
       <Spotify setIsPlaying={setIsPlaying} />
-      <SocialMedia />
+      {/* <SocialMedia /> */}
       <main className="flex-auto">{children}</main>
       <Footer />
     </>

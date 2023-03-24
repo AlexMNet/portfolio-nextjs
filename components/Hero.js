@@ -2,68 +2,38 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Particles from 'react-tsparticles'
 import particleConfig from '../utils/particleConfig'
+import { socialMediaLinks } from '../utils/data/socialMediaLinks'
+import SocialMedia from './SocialMedia'
+import Spotify from './Spotify'
 
 export default function Hero() {
   return (
-    <section className="relative ">
+    <section className="max-w-screen-lg flex flex-col h-screen bg-white dark:bg-neutral-900 mx-auto items-center px-3 md:p-0 justify-center -mt-10">
       <Particles
         style={{ zIndex: -100 }}
         className="absolute top-0 left-0 h-full w-screen"
         id="tsparticles"
         options={particleConfig}
       />
-      {/* HERO */}
-      <div className="container px-10 mt-10 md:py-14 mx-auto flex flex-col-reverse md:flex-row">
-        {/* Left Content */}
-        <div className="flex flex-col flex-1 items-left text-left justify-center">
-          <h1 className="text-5xl md:text-6xl font-normal leading-normal mt- mb-2">
-            Software Developer
-          </h1>
-          <hr className="border-0 bg-blue-500 text-blue-500 h-px max-w-md" />
-
-          <p className="text-lg font-normal leading-relaxed mt-6 md:mb-4 text-gray-500 max-w-xl">
-            I am a software developer at Sandals Church utilizing technologies
-            such as React, NextJS, PHP, and Wordpress to deliver exceptional
-            user experiences. My passion for crafting responsive and
-            user-friendly applications drives my work every day.
-          </p>
-          <Link href="#projects">
-            <button
-              className="self-start invisible md:visible bg-blue-500 text-white active:bg-pink-600 font-bold uppercase text-base px-6 py-3 rounded shadow-md outline-none transition duration-500 ease-in-out hover:bg-blue-800 transform hover:-translate-y-1 hover:scale-110"
-              type="button"
-            >
-              Projects
-            </button>
-          </Link>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8 self-center animate-bounce text-gray-400 visible md:invisible"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 13l-7 7-7-7m14-8l-7 7-7-7"
-            />
-          </svg>
+      <div className="grid grid-cols-1  ">
+        <div className="flex justify-center items-center">
+          <Image
+            className="inline-block h-64 w-64 rounded-full mx-auto object-cover object-top border-2 border-slate-500"
+            src="/images/alex.jpg"
+            width={1080}
+            height={720}
+            alt="Alex holding a guitar"
+          />
         </div>
-        {/* Right Content Image */}
-        <div className="flex-1 flex items-center justify-center md:justify-end">
-          <div className="w-3/4 ">
-            <Image
-              src="/images/alex.jpg"
-              layout="responsive"
-              objectFit="cover"
-              objectPosition="left top"
-              width={200}
-              height={200}
-              priority={true}
-              className="rounded-full"
-            />
-          </div>
+        <div className="text-center max-w-lg">
+          <h1 className="mt-2 text-4xl md:text-6xl font-bold tracking-wider text-blue-500 ">
+            Alex Maldonado
+          </h1>
+          <p className="mt-6 text-xl sm:text-2xl leading-8 text-gray-400">
+            A former touring musician (Leona Lewis, Becky G, Nispey Hussle and
+            more) turned Software Developer with a focus on web technologies.
+          </p>
+          <SocialMedia />
         </div>
       </div>
     </section>
