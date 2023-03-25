@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Image from 'next/image'
 import React from 'react'
 import { showcasedProjects } from '../utils/data/showcasedProjects'
@@ -53,20 +52,24 @@ export default function Projects() {
               </div>
               <div className="p-6 pt-3 flex gap-3">
                 {liveLink && (
-                  <button
-                    className="middle none center rounded-lg bg-blue-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                    data-ripple-light="true"
-                  >
-                    Live
-                  </button>
+                  <a href={liveLink} target="_blank">
+                    <button
+                      className="middle none center rounded-lg bg-blue-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                      data-ripple-light="true"
+                    >
+                      Live
+                    </button>
+                  </a>
                 )}
                 {githubLink && (
-                  <button
-                    className="middle none center rounded-lg bg-blue-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                    data-ripple-light="false"
-                  >
-                    Github
-                  </button>
+                  <a href={githubLink} target="_blank">
+                    <button
+                      className="middle none center rounded-lg bg-blue-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                      data-ripple-light="false"
+                    >
+                      Github
+                    </button>
+                  </a>
                 )}
                 {notification && <p className="text-red-900">{notification}</p>}
               </div>
