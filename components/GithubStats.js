@@ -6,7 +6,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 export default function GithubStats() {
   const { data, error } = useSWR(
-    'https://api.github.com/search/repositories?q=user:AlexMNet+sort:updated',
+    'https://api.github.com/search/repositories?q=user:AlexMNet+sort:updated&order=desc',
     fetcher
   )
 
@@ -84,30 +84,32 @@ export default function GithubStats() {
             data.items
               .splice(0, 6)
               .map(({ id, name, description, html_url }) => (
-                <div key={id} className="mb-10 max-w-xs">
+                <div key={id} className="mb-10 max-w-xs z-50">
                   <h1 className="text-xl mb-2">{name}</h1>
                   <p className="text-sm text-gray-500 mb-2">
                     {description ? description : 'No description'}
                   </p>
-                  <Link legacyBehavior href={html_url}>
-                    <a className="hover:text-blue-500">
-                      Visit Repo
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 inline-flex ml-3 "
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                    </a>
-                  </Link>
+                  <a
+                    href={html_url}
+                    target="_blank"
+                    className="hover:text-blue-500"
+                  >
+                    Visit Repo
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 inline-flex ml-3 "
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </a>
                 </div>
               ))}
         </div>
