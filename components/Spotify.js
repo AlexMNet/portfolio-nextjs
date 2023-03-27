@@ -11,7 +11,7 @@ export default function Spotify({ setIsPlaying }) {
   if (!data) {
     setIsPlaying(false)
     return (
-      <div className="flex items-center justify-center mx-auto text-sm text-black dark:text-gray-500  h-10">
+      <div className="flex items-center justify-center mx-auto text-sm text-black dark:text-gray-500 h-10">
         <BsSpotify className="text-spotify-green mr-1 text-base md:text-3xl animate-spinSpotify" />{' '}
         <p className="text-xs md:text-base">Loading Spotify Data</p>
       </div>
