@@ -70,7 +70,6 @@ export default function Home({ Component, pageProps }) {
       <Hero />
       <Projects />
       <Technologies />
-      <GithubStats />
     </div>
   )
 }
