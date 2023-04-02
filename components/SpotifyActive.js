@@ -11,7 +11,7 @@ export default function SpotifyActive({ data, setIsPlaying }) {
 
   if (data.type === 'podcast') {
     return (
-      <div className="flex flex-row items-center justify-center mx-auto text-sm text-white dark:text-gray-500 p-2">
+      <div className="flex flex-row items-center justify-center mx-auto text-sm text-slate-800 dark:text-gray-500 p-2">
         <BsSpotify className="text-spotify-green mr-1 text-base md:text-3xl animate-spinSpotify" />{' '}
         <a href={data.songUrl} className="hover:text-spotify-green">
           Currently listening to a podcast. Podcast Data not provided by Spotify
@@ -21,7 +21,7 @@ export default function SpotifyActive({ data, setIsPlaying }) {
     )
   }
   return (
-    <div className="flex flex-row items-center justify-center mx-auto text-sm text-white dark:text-gray-500 p-2">
+    <div className="flex flex-row items-center justify-center mx-auto text-sm text-slate-800 dark:text-gray-500 p-2">
       <BsSpotify className="text-spotify-green mr-1 text-base md:text-3xl animate-spinSpotify" />{' '}
       <a href={data.songUrl} className="hover:text-spotify-green">
         <span className="text-xs md:text-base">
