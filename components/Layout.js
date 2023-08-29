@@ -36,6 +36,15 @@ export default function Layout({ children }) {
         open={open}
         isPlaying={isPlaying}
       />
+      <div className="w-full py-4 bg-red-500 text-white flex flex-col sm:flex-row justify-center items-center gap-1 z-50 text-sm">
+        <span>This project has been deprecated. Please visit the</span>
+        <a
+          className="font-bold underline cursor-pointer z-50"
+          href="https://alexmaldonado.dev/"
+        >
+          New Site
+        </a>
+      </div>
       <Spotify setIsPlaying={setIsPlaying} />
       {/* <SocialMedia /> */}
       <main className="flex-auto">{children}</main>
