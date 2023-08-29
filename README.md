@@ -1,8 +1,10 @@
+> **_NOTICE_** This website is now deprecated. Please visit the [New Site](https://alexmaldonado.dev/)
+
 # AlexMaldonado.DEV
 
-Dev Portfolio is live here
+The old Dev Portfolio is live here
 
-[AlexMaldonado.DEV](https://www.alexmaldonado.dev)
+[Old site](https://old.alexmaldonado.dev)
 
 <div align="center">
 <img src="demo/desktop-portfolio.gif" width="750">
